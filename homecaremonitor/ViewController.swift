@@ -15,21 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var sortOnTimeButton: UIButton!
     
     // severity button
-    let severityButtonAnimSteps :Int = 20
-    var severityButtonAnimStep = 0
     let severityButtonAnimBasename :String = "severity_"
     var severitySort = "up" // up | down
-    var severityButtonTimer = NSTimer.init()
+    var severityButtonTimer = HCTimerWrapper()
     let severityButtonTimeInterval: NSTimeInterval = 0.02
     
     
-    let timeButtonAnimSteps :Int = 20
-    var timeButtonAnimStep :Int = 0
     let timeButtonForwAnimBasename = "timeforward_"
     let timeButtonBackwAnimBasename = "timebackward_"
     var timeSort = "forward"   // forward | backward
-    var timeButtonTimer = NSTimer()
-    let timeButtonTimeInterval: NSTimeInterval = 0.5
+    var timeButtonTimer = HCTimerWrapper()
+    let timeButtonTimeInterval: NSTimeInterval = 0.02
     
     
     
@@ -58,76 +54,77 @@ class ViewController: UIViewController {
     }
     
 
-//    func animateButton(button :UIButton, step :Int, maxSteps: Int, basename: String ) {
-    func animateButton() {
-        
-        if (severitySort == "down") {
-            severityButtonAnimStep += 1
-        } else {
-            severityButtonAnimStep -= 1
-        }
-        
-        if (severityButtonAnimStep == severityButtonAnimSteps) {
-            severityButtonTimer.invalidate()
-        }
-
-        if (severityButtonAnimStep == 0) {
-            severityButtonTimer.invalidate()
-        }
-
-        print("image severityButtonAnimBasename_\(String(format:"%02i",severityButtonAnimStep))")
-
-        if let image = UIImage(named: String(severityButtonAnimBasename) + String(format:"%02i",severityButtonAnimStep)) {
-            sortOnSeverityButton.setImage(image, forState: .Normal)
-        }
-        
-        
-    }
-
-    
-    
     
     @IBAction func sortOnSeverityButtonTouchInside(sender: UIButton) {
-
         
-        let dictionary: [String : AnyObject] = ["Button" : sortOnSeverityButton,
-                                                "start": 0,
-                                                "stop": 20,
-                                                "basefilename": severityButtonAnimBasename,
-                                                "timer": severityButtonTimer]
+        var dictionary: [String : AnyObject] = [:]
+                print("first line")
+//        let pausableTimer = severityButtonTimer
+ 
         
-        
-     
-        // Change sort order
-        if (severitySort == "up") {
-            severitySort = "down"
-        } else {
-            severitySort = "up"
-        }
-
-        // Start animation
-       // let sevButtonAnimD§ict = timer.userInfo as NSDictionary
+        // Start animation if none running
         if (!severityButtonTimer.valid) {
-            print("Timer sortOnSeverityButtonTouchInside")
+            // Change sort order
+            if (severitySort == "up") {
+                severitySort = "down"
+                dictionary = ["Button" : sortOnSeverityButton,
+                              "start": 0,
+                              "stop": 20,
+                              "basefilename": severityButtonAnimBasename,
+                              "crossfade": false,
+                              "timer": severityButtonTimer]
+            } else {
+                severitySort = "up"
+                dictionary = ["Button" : sortOnSeverityButton,
+                              "start": 20,
+                              "stop": 0,
+                              "basefilename": severityButtonAnimBasename,
+                              "crossfade": false,
+                              "timer": severityButtonTimer]
+            }
             
-        //    let buttonAnimation :ButtonAnimation = ButtonAnimation(arguments: dictionary)!
+            let buttonAnimation :ButtonAnimation = ButtonAnimation()
+            
+//            severityButtonTimer = NSTimer.scheduledTimerWithTimeInterval(severityButtonTimeInterval, target: buttonAnimation , selector: #selector(ButtonAnimation.self.animateButton), userInfo: dictionary, repeats: true)
 
-//            severityButtonTimer = NSTimer.scheduledTimerWithTimeInterval(severityButtonTimeInterval, target: buttonAnimation , selector: #selector(ButtonAnimation.animateButton), userInfo: nil, repeats: true)
+            severityButtonTimer.pausableScheduledTimerWithTimeInterval(severityButtonTimeInterval, target: buttonAnimation , selector: #selector(ButtonAnimation.self.animateButton), userInfo: dictionary, repeats: true)
             
-            severityButtonTimer = NSTimer.scheduledTimerWithTimeInterval(severityButtonTimeInterval, target: self , selector: #selector(ButtonAnimation.animateButton), userInfo: dictionary, repeats: true)
-        
-            
-            //        severityButtonTimer = NSTimer.scheduledTimerWithTimeInterval(severityButtonTimeInterval, target: self, selector: #selector(ViewController.animateButton), userInfo: nil, repeats: true)
-            //            severityButtonTimer = NSTimer.scheduledTimerWithTimeInterval(severityButtonTimeInterval, target: ButtonAnimation.self(arguments: dictionary) , selector: #Selector("add"), userInfo: nil, repeats: true)
-        
-        
-    }
+        }
         
     }
     
     
     @IBAction func sortOnTimeButtonTouchInside(sender: UIButton) {
+
+        var dictionary: [String : AnyObject] = [:]
+      //  let pausableTimer = severityButtonTimer
         
+        // Start animation if none running
+        if (!timeButtonTimer.valid) {
+            // Change sort order
+            if (timeSort == "forward") {
+                timeSort = "backward"
+                dictionary = ["Button" : sortOnTimeButton,
+                              "start": 0,
+                              "stop": 20,
+                              "basefilename": timeButtonBackwAnimBasename,
+                              "crossfade": true,
+                              "timer": timeButtonTimer]
+            } else {
+                timeSort = "forward"
+                dictionary = ["Button" : sortOnTimeButton,
+                              "start": 0,
+                              "stop": 20,
+                              "basefilename": timeButtonForwAnimBasename,
+                              "crossfade": true,
+                              "timer": timeButtonTimer]
+            }
+            
+            let buttonAnimation :ButtonAnimation = ButtonAnimation()
+            
+            timeButtonTimer.pausableScheduledTimerWithTimeInterval(timeButtonTimeInterval, target: buttonAnimation , selector: #selector(ButtonAnimation.self.animateButton), userInfo: dictionary, repeats: true)
+            
+        }
         
     }
     

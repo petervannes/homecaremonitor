@@ -73,6 +73,8 @@
 		5744CBE71CB30020005B6CBD /* severity_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBD21CB30020005B6CBD /* severity_20.png */; };
 		5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBE91CB30547005B6CBD /* ViewController.swift */; };
 		5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */; };
+		579361BA1CB6F2A10043EBE0 /* HCTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361B91CB6F2A10043EBE0 /* HCTimer.swift */; };
+		579361BC1CB7CA960043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */; };
 		57E63BB71CAE955E00A37CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E63BB51CAE955E00A37CC8 /* Main.storyboard */; };
 		57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E63BB81CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld */; };
 		57E63BBC1CAE955E00A37CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E63BBB1CAE955E00A37CC8 /* Assets.xcassets */; };
@@ -176,6 +178,8 @@
 		5744CBD21CB30020005B6CBD /* severity_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_20.png; sourceTree = "<group>"; };
 		5744CBE91CB30547005B6CBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = homecaremonitor/AppDelegate.swift; sourceTree = "<group>"; };
+		579361B91CB6F2A10043EBE0 /* HCTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimer.swift; sourceTree = "<group>"; };
+		579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
 		57E63BAE1CAE955E00A37CC8 /* homecaremonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homecaremonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E63BB61CAE955E00A37CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57E63BB91CAE955E00A37CC8 /* homecaremonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homecaremonitor.xcdatamodel; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 			children = (
 				5736F56E1CB4467200195475 /* img */,
 				5744CBE91CB30547005B6CBD /* ViewController.swift */,
+				579361B91CB6F2A10043EBE0 /* HCTimer.swift */,
+				579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */,
 				57E63BB51CAE955E00A37CC8 /* Main.storyboard */,
 				57E63BBB1CAE955E00A37CC8 /* Assets.xcassets */,
 				57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */,
@@ -614,7 +620,9 @@
 			files = (
 				5736F5761CB5976700195475 /* ButtonAnimation.swift in Sources */,
 				5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */,
+				579361BC1CB7CA960043EBE0 /* HCTimerWrapper.swift in Sources */,
 				5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */,
+				579361BA1CB6F2A10043EBE0 /* HCTimer.swift in Sources */,
 				57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
