@@ -50,6 +50,15 @@
 		57419D8C1CB444C6004DDD80 /* timebackward_18.png in Resources */ = {isa = PBXBuildFile; fileRef = 57419D771CB444C6004DDD80 /* timebackward_18.png */; };
 		57419D8D1CB444C6004DDD80 /* timebackward_19.png in Resources */ = {isa = PBXBuildFile; fileRef = 57419D781CB444C6004DDD80 /* timebackward_19.png */; };
 		57419D8E1CB444C6004DDD80 /* timebackward_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 57419D791CB444C6004DDD80 /* timebackward_20.png */; };
+		5741A39B1CBC2CC20066FF29 /* Eurostile.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3991CBC2AB60066FF29 /* Eurostile.ttf */; };
+		5741A39F1CBC32E60066FF29 /* ReportTableviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A39E1CBC32E60066FF29 /* ReportTableviewCell.swift */; };
+		5741A3A81CBD79E50066FF29 /* severity_level_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A31CBD79E50066FF29 /* severity_level_0.png */; };
+		5741A3A91CBD79E50066FF29 /* severity_level_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A41CBD79E50066FF29 /* severity_level_1.png */; };
+		5741A3AA1CBD79E50066FF29 /* severity_level_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A51CBD79E50066FF29 /* severity_level_2.png */; };
+		5741A3AB1CBD79E50066FF29 /* severity_level_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A61CBD79E50066FF29 /* severity_level_3.png */; };
+		5741A3AC1CBD79E50066FF29 /* severity_level_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A71CBD79E50066FF29 /* severity_level_4.png */; };
+		5741A3AF1CBD7D9C0066FF29 /* newmessageindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */; };
+		5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A3B01CC0194A0066FF29 /* DateFunctions.swift */; };
 		5744CBD31CB30020005B6CBD /* severity_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBE1CB30020005B6CBD /* severity_00.png */; };
 		5744CBD41CB30020005B6CBD /* severity_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBF1CB30020005B6CBD /* severity_01.png */; };
 		5744CBD51CB30020005B6CBD /* severity_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBC01CB30020005B6CBD /* severity_02.png */; };
@@ -73,8 +82,11 @@
 		5744CBE71CB30020005B6CBD /* severity_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBD21CB30020005B6CBD /* severity_20.png */; };
 		5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBE91CB30547005B6CBD /* ViewController.swift */; };
 		5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */; };
-		579361BA1CB6F2A10043EBE0 /* HCTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361B91CB6F2A10043EBE0 /* HCTimer.swift */; };
-		579361BC1CB7CA960043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */; };
+		579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */; };
+		57C393451CB819FB00C36D71 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */; };
+		57C393461CB819FB00C36D71 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393441CB819FB00C36D71 /* Report.swift */; };
+		57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */; };
+		57C394301CBC237300C36D71 /* ReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942F1CBC237300C36D71 /* ReportCell.xib */; };
 		57E63BB71CAE955E00A37CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E63BB51CAE955E00A37CC8 /* Main.storyboard */; };
 		57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57E63BB81CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld */; };
 		57E63BBC1CAE955E00A37CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E63BBB1CAE955E00A37CC8 /* Assets.xcassets */; };
@@ -155,6 +167,15 @@
 		57419D771CB444C6004DDD80 /* timebackward_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timebackward_18.png; sourceTree = "<group>"; };
 		57419D781CB444C6004DDD80 /* timebackward_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timebackward_19.png; sourceTree = "<group>"; };
 		57419D791CB444C6004DDD80 /* timebackward_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timebackward_20.png; sourceTree = "<group>"; };
+		5741A3991CBC2AB60066FF29 /* Eurostile.ttf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Eurostile.ttf; sourceTree = "<group>"; };
+		5741A39E1CBC32E60066FF29 /* ReportTableviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportTableviewCell.swift; path = ../ReportTableviewCell.swift; sourceTree = "<group>"; };
+		5741A3A31CBD79E50066FF29 /* severity_level_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_0.png; sourceTree = "<group>"; };
+		5741A3A41CBD79E50066FF29 /* severity_level_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_1.png; sourceTree = "<group>"; };
+		5741A3A51CBD79E50066FF29 /* severity_level_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_2.png; sourceTree = "<group>"; };
+		5741A3A61CBD79E50066FF29 /* severity_level_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_3.png; sourceTree = "<group>"; };
+		5741A3A71CBD79E50066FF29 /* severity_level_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_4.png; sourceTree = "<group>"; };
+		5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newmessageindicator.png; sourceTree = "<group>"; };
+		5741A3B01CC0194A0066FF29 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
 		5744CBBE1CB30020005B6CBD /* severity_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_00.png; sourceTree = "<group>"; };
 		5744CBBF1CB30020005B6CBD /* severity_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_01.png; sourceTree = "<group>"; };
 		5744CBC01CB30020005B6CBD /* severity_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_02.png; sourceTree = "<group>"; };
@@ -177,9 +198,12 @@
 		5744CBD11CB30020005B6CBD /* severity_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_19.png; sourceTree = "<group>"; };
 		5744CBD21CB30020005B6CBD /* severity_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_20.png; sourceTree = "<group>"; };
 		5744CBE91CB30547005B6CBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = homecaremonitor/AppDelegate.swift; sourceTree = "<group>"; };
-		579361B91CB6F2A10043EBE0 /* HCTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimer.swift; sourceTree = "<group>"; };
-		579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
+		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
+		57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Report+CoreDataProperties.swift"; path = "../Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		57C393441CB819FB00C36D71 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = ../Report.swift; sourceTree = "<group>"; };
+		57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReportCellBorder.png; sourceTree = "<group>"; };
+		57C3942F1CBC237300C36D71 /* ReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportCell.xib; sourceTree = "<group>"; };
 		57E63BAE1CAE955E00A37CC8 /* homecaremonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homecaremonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E63BB61CAE955E00A37CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57E63BB91CAE955E00A37CC8 /* homecaremonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = homecaremonitor.xcdatamodel; sourceTree = "<group>"; };
@@ -258,14 +282,61 @@
 			path = timeforward;
 			sourceTree = "<group>";
 		};
-		5736F56E1CB4467200195475 /* img */ = {
+		5736F56E1CB4467200195475 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */,
+				5741A3AD1CBD79EC0066FF29 /* severity_level */,
+				57C393491CB81D4D00C36D71 /* cell */,
 				5736F5411CB4466E00195475 /* timeforward */,
 				5744CBE81CB3002A005B6CBD /* severity */,
 				5744CC461CB44101005B6CBD /* timebackward */,
 			);
-			name = img;
+			name = Img;
+			sourceTree = "<group>";
+		};
+		5741A3A01CBC39BA0066FF29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57E63BB51CAE955E00A37CC8 /* Main.storyboard */,
+				57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */,
+				5744CBE91CB30547005B6CBD /* ViewController.swift */,
+				5741A39E1CBC32E60066FF29 /* ReportTableviewCell.swift */,
+				57C3942F1CBC237300C36D71 /* ReportCell.xib */,
+				5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5741A3A11CBC39F30066FF29 /* Object */ = {
+			isa = PBXGroup;
+			children = (
+				57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */,
+				57C393441CB819FB00C36D71 /* Report.swift */,
+			);
+			name = Object;
+			sourceTree = "<group>";
+		};
+		5741A3A21CBC3A1B0066FF29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */,
+				5736F5751CB5976700195475 /* ButtonAnimation.swift */,
+				5741A3B01CC0194A0066FF29 /* DateFunctions.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		5741A3AD1CBD79EC0066FF29 /* severity_level */ = {
+			isa = PBXGroup;
+			children = (
+				5741A3A31CBD79E50066FF29 /* severity_level_0.png */,
+				5741A3A41CBD79E50066FF29 /* severity_level_1.png */,
+				5741A3A51CBD79E50066FF29 /* severity_level_2.png */,
+				5741A3A61CBD79E50066FF29 /* severity_level_3.png */,
+				5741A3A71CBD79E50066FF29 /* severity_level_4.png */,
+			);
+			name = severity_level;
 			sourceTree = "<group>";
 		};
 		5744CBE81CB3002A005B6CBD /* severity */ = {
@@ -324,10 +395,35 @@
 			path = timebackward;
 			sourceTree = "<group>";
 		};
+		57887DB21CBC278D001DBA14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57E63BEE1CAE96D700A37CC8 /* Icon */,
+				57C394351CBC274500C36D71 /* Fonts */,
+				5736F56E1CB4467200195475 /* Img */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		57C393491CB81D4D00C36D71 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		57C394351CBC274500C36D71 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5741A3991CBC2AB60066FF29 /* Eurostile.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		57E63BA51CAE955E00A37CC8 = {
 			isa = PBXGroup;
 			children = (
-				5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */,
 				57E63BB01CAE955E00A37CC8 /* homecaremonitor */,
 				57E63BC81CAE955E00A37CC8 /* homecaremonitorTests */,
 				57E63BD31CAE955E00A37CC8 /* homecaremonitorUITests */,
@@ -348,18 +444,14 @@
 		57E63BB01CAE955E00A37CC8 /* homecaremonitor */ = {
 			isa = PBXGroup;
 			children = (
-				5736F56E1CB4467200195475 /* img */,
-				5744CBE91CB30547005B6CBD /* ViewController.swift */,
-				579361B91CB6F2A10043EBE0 /* HCTimer.swift */,
-				579361BB1CB7CA960043EBE0 /* HCTimerWrapper.swift */,
-				57E63BB51CAE955E00A37CC8 /* Main.storyboard */,
+				5741A3A01CBC39BA0066FF29 /* View */,
+				5741A3A21CBC3A1B0066FF29 /* Model */,
+				5741A3A11CBC39F30066FF29 /* Object */,
+				57887DB21CBC278D001DBA14 /* Resources */,
 				57E63BBB1CAE955E00A37CC8 /* Assets.xcassets */,
-				57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */,
-				57E63BEE1CAE96D700A37CC8 /* icon */,
 				57E63BEF1CAE96F100A37CC8 /* launchscreen */,
 				57E63BC01CAE955E00A37CC8 /* Info.plist */,
 				57E63BB81CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld */,
-				5736F5751CB5976700195475 /* ButtonAnimation.swift */,
 			);
 			path = homecaremonitor;
 			sourceTree = "<group>";
@@ -382,7 +474,7 @@
 			path = homecaremonitorUITests;
 			sourceTree = "<group>";
 		};
-		57E63BEE1CAE96D700A37CC8 /* icon */ = {
+		57E63BEE1CAE96D700A37CC8 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
 				57E63C1A1CAEA27C00A37CC8 /* 29 - iPhone.png */,
@@ -395,7 +487,7 @@
 				57E63C211CAEA27C00A37CC8 /* 60 - iPhone app@2x.png */,
 				57E63C221CAEA27C00A37CC8 /* 60 - iPhone app@3x.png */,
 			);
-			name = icon;
+			name = Icon;
 			sourceTree = "<group>";
 		};
 		57E63BEF1CAE96F100A37CC8 /* launchscreen */ = {
@@ -520,17 +612,23 @@
 				57419D871CB444C6004DDD80 /* timebackward_13.png in Resources */,
 				5736F5631CB4466E00195475 /* timeforward_10.png in Resources */,
 				5744CBE01CB30020005B6CBD /* severity_13.png in Resources */,
+				5741A3AB1CBD79E50066FF29 /* severity_level_3.png in Resources */,
+				57C394301CBC237300C36D71 /* ReportCell.xib in Resources */,
 				57E63C281CAEA27C00A37CC8 /* 40 - iPhone spotlight@3x.png in Resources */,
+				5741A39B1CBC2CC20066FF29 /* Eurostile.ttf in Resources */,
 				5744CBD81CB30020005B6CBD /* severity_05.png in Resources */,
+				5741A3A91CBD79E50066FF29 /* severity_level_1.png in Resources */,
 				5736F5671CB4466E00195475 /* timeforward_14.png in Resources */,
 				5736F56C1CB4466E00195475 /* timeforward_19.png in Resources */,
 				5736F5641CB4466E00195475 /* timeforward_11.png in Resources */,
 				57419D7C1CB444C6004DDD80 /* timebackward_02.png in Resources */,
 				57419D8E1CB444C6004DDD80 /* timebackward_20.png in Resources */,
+				5741A3AF1CBD7D9C0066FF29 /* newmessageindicator.png in Resources */,
 				5744CBDE1CB30020005B6CBD /* severity_11.png in Resources */,
 				5744CBE61CB30020005B6CBD /* severity_19.png in Resources */,
 				5736F5601CB4466E00195475 /* timeforward_07.png in Resources */,
 				5744CBE41CB30020005B6CBD /* severity_17.png in Resources */,
+				5741A3AA1CBD79E50066FF29 /* severity_level_2.png in Resources */,
 				57E63C261CAEA27C00A37CC8 /* 40 - iPhone spotlight.png in Resources */,
 				5736F5651CB4466E00195475 /* timeforward_12.png in Resources */,
 				57E63C2B1CAEA27C00A37CC8 /* 60 - iPhone app@3x.png in Resources */,
@@ -545,6 +643,8 @@
 				5736F56A1CB4466E00195475 /* timeforward_17.png in Resources */,
 				5744CBD61CB30020005B6CBD /* severity_03.png in Resources */,
 				57419D7D1CB444C6004DDD80 /* timebackward_03.png in Resources */,
+				5741A3A81CBD79E50066FF29 /* severity_level_0.png in Resources */,
+				5741A3AC1CBD79E50066FF29 /* severity_level_4.png in Resources */,
 				5736F55B1CB4466E00195475 /* timeforward_02.png in Resources */,
 				57419D821CB444C6004DDD80 /* timebackward_08.png in Resources */,
 				5744CBDB1CB30020005B6CBD /* severity_08.png in Resources */,
@@ -572,6 +672,7 @@
 				5744CBD51CB30020005B6CBD /* severity_02.png in Resources */,
 				5744CBD71CB30020005B6CBD /* severity_04.png in Resources */,
 				5744CBE11CB30020005B6CBD /* severity_14.png in Resources */,
+				57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */,
 				57E63C2F1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png in Resources */,
 				57419D8C1CB444C6004DDD80 /* timebackward_18.png in Resources */,
 				5736F55F1CB4466E00195475 /* timeforward_06.png in Resources */,
@@ -619,10 +720,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5736F5761CB5976700195475 /* ButtonAnimation.swift in Sources */,
+				57C393451CB819FB00C36D71 /* Report+CoreDataProperties.swift in Sources */,
+				57C393461CB819FB00C36D71 /* Report.swift in Sources */,
+				5741A39F1CBC32E60066FF29 /* ReportTableviewCell.swift in Sources */,
 				5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */,
-				579361BC1CB7CA960043EBE0 /* HCTimerWrapper.swift in Sources */,
+				579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */,
 				5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */,
-				579361BA1CB6F2A10043EBE0 /* HCTimer.swift in Sources */,
+				5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */,
 				57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

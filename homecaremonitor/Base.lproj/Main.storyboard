@@ -17,27 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3bw-HQ-ChK">
-                                <rect key="frame" x="0.0" y="44" width="533" height="288"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ReB-nr-m5d">
-                                        <rect key="frame" x="0.0" y="28" width="533" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ReB-nr-m5d" id="Ibc-54-tg0">
-                                            <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxH-uv-ce7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="barTintColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem id="fbV-l2-A66">
                                         <nil key="title"/>
-                                        <barButtonItem key="leftBarButtonItem" title="sort on time" style="plain" id="Mpa-yw-eeW">
+                                        <barButtonItem key="leftBarButtonItem" title="sort on time" id="Mpa-yw-eeW">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LEd-dg-dzg">
                                                 <rect key="frame" x="16" y="0.0" width="44" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,10 +36,11 @@
                                                 </connections>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="sort on severity" style="plain" id="EVn-d8-UEg">
+                                        <barButtonItem key="rightBarButtonItem" title="sort on severity" id="EVn-d8-UEg">
                                             <button key="customView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vgD-GU-tgd">
-                                                <rect key="frame" x="234" y="11" width="125" height="22"/>
+                                                <rect key="frame" x="284" y="9" width="75" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                                 <state key="normal" image="severity_00.png"/>
                                                 <connections>
                                                     <action selector="sortOnSeverityButtonTouchInside:" destination="WfV-Cd-hsp" eventType="touchUpInside" id="yPQ-s6-3MI"/>
@@ -60,6 +50,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3bw-HQ-ChK">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -68,6 +62,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="alertTableView" destination="3bw-HQ-ChK" id="PMm-YP-2Hl"/>
                         <outlet property="sortOnSeverityButton" destination="vgD-GU-tgd" id="3HJ-jX-Bid"/>
                         <outlet property="sortOnTimeButton" destination="LEd-dg-dzg" id="6LO-Wm-ysg"/>
                     </connections>
@@ -78,7 +73,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="severity_00.png" width="71" height="22"/>
+        <image name="severity_00.png" width="75" height="26"/>
         <image name="timeforward_00.png" width="44" height="44"/>
     </resources>
 </document>
