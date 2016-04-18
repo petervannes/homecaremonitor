@@ -14,6 +14,7 @@ class ReportTableviewCell : UITableViewCell {
     @IBOutlet weak var reportCellDateTimeOutlet: UILabel!
     @IBOutlet weak var reportCellCustomerLabelOutlet: UILabel!
     @IBOutlet weak var reportCellDescriptionOutlet: UILabel!
+    @IBOutlet weak var reportCellViewedIndicatorOutlet: UIImageView!
     
     
     
@@ -24,4 +25,6 @@ class ReportTableviewCell : UITableViewCell {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated    )
     }
+    
+    
 }

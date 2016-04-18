@@ -59,6 +59,7 @@
 		5741A3AC1CBD79E50066FF29 /* severity_level_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A71CBD79E50066FF29 /* severity_level_4.png */; };
 		5741A3AF1CBD7D9C0066FF29 /* newmessageindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */; };
 		5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A3B01CC0194A0066FF29 /* DateFunctions.swift */; };
+		5741A3B71CC1168D0066FF29 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */; };
 		5744CBD31CB30020005B6CBD /* severity_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBE1CB30020005B6CBD /* severity_00.png */; };
 		5744CBD41CB30020005B6CBD /* severity_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBF1CB30020005B6CBD /* severity_01.png */; };
 		5744CBD51CB30020005B6CBD /* severity_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBC01CB30020005B6CBD /* severity_02.png */; };
@@ -83,7 +84,6 @@
 		5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBE91CB30547005B6CBD /* ViewController.swift */; };
 		5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */; };
 		579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */; };
-		57C393451CB819FB00C36D71 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */; };
 		57C393461CB819FB00C36D71 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393441CB819FB00C36D71 /* Report.swift */; };
 		57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */; };
 		57C394301CBC237300C36D71 /* ReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942F1CBC237300C36D71 /* ReportCell.xib */; };
@@ -176,6 +176,7 @@
 		5741A3A71CBD79E50066FF29 /* severity_level_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_4.png; sourceTree = "<group>"; };
 		5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newmessageindicator.png; sourceTree = "<group>"; };
 		5741A3B01CC0194A0066FF29 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
+		5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Report+CoreDataProperties.swift"; path = "../Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5744CBBE1CB30020005B6CBD /* severity_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_00.png; sourceTree = "<group>"; };
 		5744CBBF1CB30020005B6CBD /* severity_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_01.png; sourceTree = "<group>"; };
 		5744CBC01CB30020005B6CBD /* severity_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_02.png; sourceTree = "<group>"; };
@@ -200,7 +201,6 @@
 		5744CBE91CB30547005B6CBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
-		57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Report+CoreDataProperties.swift"; path = "../Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		57C393441CB819FB00C36D71 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = ../Report.swift; sourceTree = "<group>"; };
 		57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReportCellBorder.png; sourceTree = "<group>"; };
 		57C3942F1CBC237300C36D71 /* ReportCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReportCell.xib; sourceTree = "<group>"; };
@@ -311,7 +311,7 @@
 		5741A3A11CBC39F30066FF29 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				57C393431CB819FB00C36D71 /* Report+CoreDataProperties.swift */,
+				5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */,
 				57C393441CB819FB00C36D71 /* Report.swift */,
 			);
 			name = Object;
@@ -720,13 +720,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5736F5761CB5976700195475 /* ButtonAnimation.swift in Sources */,
-				57C393451CB819FB00C36D71 /* Report+CoreDataProperties.swift in Sources */,
 				57C393461CB819FB00C36D71 /* Report.swift in Sources */,
 				5741A39F1CBC32E60066FF29 /* ReportTableviewCell.swift in Sources */,
 				5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */,
 				579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */,
 				5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */,
 				5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */,
+				5741A3B71CC1168D0066FF29 /* Report+CoreDataProperties.swift in Sources */,
 				57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -865,6 +865,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reddipped.com.homecaremonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -876,6 +877,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = reddipped.com.homecaremonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

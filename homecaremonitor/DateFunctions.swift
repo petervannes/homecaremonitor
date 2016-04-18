@@ -42,9 +42,9 @@ struct DateFunctions {
         case let(dc) where dc.day == 1:
             dateDescription = "a \(dc.day) day ago"
         case let(dc) where dc.hour > 1:
-            dateDescription = "\(dc.day) hours ago"
-        case let(dc) where dc.day == 1:
-            dateDescription = "an \(dc.day) hour ago"
+            dateDescription = "\(dc.hour) hours ago"
+        case let(dc) where dc.hour == 1:
+            dateDescription = "an \(dc.hour) hour ago"
         case let(dc) where dc.minute > 15:
             dateDescription = "\(dc.minute) minutes ago"
         case let(dc) where dc.minute <= 15:
