@@ -83,6 +83,8 @@
 		5744CBE71CB30020005B6CBD /* severity_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBD21CB30020005B6CBD /* severity_20.png */; };
 		5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBE91CB30547005B6CBD /* ViewController.swift */; };
 		5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */; };
+		5778E7A81CCA2FEB0044B834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */; };
+		5778E7AA1CCA30350044B834 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A91CCA30350044B834 /* Logo.png */; };
 		579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */; };
 		57C393461CB819FB00C36D71 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393441CB819FB00C36D71 /* Report.swift */; };
 		57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */; };
@@ -101,9 +103,6 @@
 		57E63C291CAEA27C00A37CC8 /* 60 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C201CAEA27C00A37CC8 /* 60 - iPhone app.png */; };
 		57E63C2A1CAEA27C00A37CC8 /* 60 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C211CAEA27C00A37CC8 /* 60 - iPhone app@2x.png */; };
 		57E63C2B1CAEA27C00A37CC8 /* 60 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C221CAEA27C00A37CC8 /* 60 - iPhone app@3x.png */; };
-		57E63C2E1CAEA58D00A37CC8 /* Launchscreen iPhone 6 Plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C2C1CAEA58D00A37CC8 /* Launchscreen iPhone 6 Plus@3x.png */; };
-		57E63C2F1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C2D1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png */; };
-		57E63C311CAEA5DB00A37CC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +199,8 @@
 		5744CBD21CB30020005B6CBD /* severity_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_20.png; sourceTree = "<group>"; };
 		5744CBE91CB30547005B6CBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5778E7A91CCA30350044B834 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
 		57C393441CB819FB00C36D71 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = ../Report.swift; sourceTree = "<group>"; };
 		57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReportCellBorder.png; sourceTree = "<group>"; };
@@ -224,9 +225,6 @@
 		57E63C201CAEA27C00A37CC8 /* 60 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "60 - iPhone app.png"; path = "../60 - iPhone app.png"; sourceTree = "<group>"; };
 		57E63C211CAEA27C00A37CC8 /* 60 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "60 - iPhone app@2x.png"; path = "../60 - iPhone app@2x.png"; sourceTree = "<group>"; };
 		57E63C221CAEA27C00A37CC8 /* 60 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "60 - iPhone app@3x.png"; path = "../60 - iPhone app@3x.png"; sourceTree = "<group>"; };
-		57E63C2C1CAEA58D00A37CC8 /* Launchscreen iPhone 6 Plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Launchscreen iPhone 6 Plus@3x.png"; path = "../Launchscreen iPhone 6 Plus@3x.png"; sourceTree = "<group>"; };
-		57E63C2D1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Launchscreen iPhone 6@2x.png"; path = "../Launchscreen iPhone 6@2x.png"; sourceTree = "<group>"; };
-		57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +283,7 @@
 		5736F56E1CB4467200195475 /* Img */ = {
 			isa = PBXGroup;
 			children = (
+				5778E7A91CCA30350044B834 /* Logo.png */,
 				5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */,
 				5741A3AD1CBD79EC0066FF29 /* severity_level */,
 				57C393491CB81D4D00C36D71 /* cell */,
@@ -299,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				57E63BB51CAE955E00A37CC8 /* Main.storyboard */,
-				57E63C301CAEA5DB00A37CC8 /* LaunchScreen.storyboard */,
+				5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */,
 				5744CBE91CB30547005B6CBD /* ViewController.swift */,
 				5741A39E1CBC32E60066FF29 /* ReportTableviewCell.swift */,
 				57C3942F1CBC237300C36D71 /* ReportCell.xib */,
@@ -449,7 +448,6 @@
 				5741A3A11CBC39F30066FF29 /* Object */,
 				57887DB21CBC278D001DBA14 /* Resources */,
 				57E63BBB1CAE955E00A37CC8 /* Assets.xcassets */,
-				57E63BEF1CAE96F100A37CC8 /* launchscreen */,
 				57E63BC01CAE955E00A37CC8 /* Info.plist */,
 				57E63BB81CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld */,
 			);
@@ -488,15 +486,6 @@
 				57E63C221CAEA27C00A37CC8 /* 60 - iPhone app@3x.png */,
 			);
 			name = Icon;
-			sourceTree = "<group>";
-		};
-		57E63BEF1CAE96F100A37CC8 /* launchscreen */ = {
-			isa = PBXGroup;
-			children = (
-				57E63C2C1CAEA58D00A37CC8 /* Launchscreen iPhone 6 Plus@3x.png */,
-				57E63C2D1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png */,
-			);
-			name = launchscreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,6 +602,7 @@
 				5736F5631CB4466E00195475 /* timeforward_10.png in Resources */,
 				5744CBE01CB30020005B6CBD /* severity_13.png in Resources */,
 				5741A3AB1CBD79E50066FF29 /* severity_level_3.png in Resources */,
+				5778E7AA1CCA30350044B834 /* Logo.png in Resources */,
 				57C394301CBC237300C36D71 /* ReportCell.xib in Resources */,
 				57E63C281CAEA27C00A37CC8 /* 40 - iPhone spotlight@3x.png in Resources */,
 				5741A39B1CBC2CC20066FF29 /* Eurostile.ttf in Resources */,
@@ -655,7 +645,6 @@
 				5736F5691CB4466E00195475 /* timeforward_16.png in Resources */,
 				57419D8B1CB444C6004DDD80 /* timebackward_17.png in Resources */,
 				57419D7F1CB444C6004DDD80 /* timebackward_05.png in Resources */,
-				57E63C311CAEA5DB00A37CC8 /* LaunchScreen.storyboard in Resources */,
 				5744CBE21CB30020005B6CBD /* severity_15.png in Resources */,
 				57419D841CB444C6004DDD80 /* timebackward_10.png in Resources */,
 				5744CBDA1CB30020005B6CBD /* severity_07.png in Resources */,
@@ -663,6 +652,7 @@
 				57419D7B1CB444C6004DDD80 /* timebackward_01.png in Resources */,
 				57419D801CB444C6004DDD80 /* timebackward_06.png in Resources */,
 				57E63BBC1CAE955E00A37CC8 /* Assets.xcassets in Resources */,
+				5778E7A81CCA2FEB0044B834 /* LaunchScreen.storyboard in Resources */,
 				57E63BB71CAE955E00A37CC8 /* Main.storyboard in Resources */,
 				5744CBE51CB30020005B6CBD /* severity_18.png in Resources */,
 				57419D8D1CB444C6004DDD80 /* timebackward_19.png in Resources */,
@@ -673,7 +663,6 @@
 				5744CBD71CB30020005B6CBD /* severity_04.png in Resources */,
 				5744CBE11CB30020005B6CBD /* severity_14.png in Resources */,
 				57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */,
-				57E63C2F1CAEA58D00A37CC8 /* Launchscreen iPhone 6@2x.png in Resources */,
 				57419D8C1CB444C6004DDD80 /* timebackward_18.png in Resources */,
 				5736F55F1CB4466E00195475 /* timeforward_06.png in Resources */,
 				57E63C271CAEA27C00A37CC8 /* 40 - iPhone spotlight@2x.png in Resources */,
@@ -687,7 +676,6 @@
 				57419D881CB444C6004DDD80 /* timebackward_14.png in Resources */,
 				57E63C231CAEA27C00A37CC8 /* 29 - iPhone.png in Resources */,
 				5736F55E1CB4466E00195475 /* timeforward_05.png in Resources */,
-				57E63C2E1CAEA58D00A37CC8 /* Launchscreen iPhone 6 Plus@3x.png in Resources */,
 				5744CBD91CB30020005B6CBD /* severity_06.png in Resources */,
 				57419D851CB444C6004DDD80 /* timebackward_11.png in Resources */,
 				5736F55C1CB4466E00195475 /* timeforward_03.png in Resources */,

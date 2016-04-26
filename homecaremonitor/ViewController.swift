@@ -42,8 +42,8 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             "severity" : 1,
             "reportDate": NSDate(),
             "customer" : "",
-            "shortMessage": "TV Running, no activity",
-            "longMessage": "Sensor a has notices that TV is running, but no movement has been detected for 2 hours in the house"
+            "shortMessage": "TV Running, no activity. So there is more text than can be displayed. Try to fix it over more lines. But it does not seem to fit. So try to overload this",
+            "longMessage": "Sensor a has notices that TV is running, but no movement has been detected for 2 hours in the house. So there is more to see here."
         ],
         ["viewed" : false,
             "severity": 2,
@@ -75,14 +75,65 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         let nib = UINib(nibName: "ReportCell", bundle: nil)
         alertTableView.registerNib(nib, forCellReuseIdentifier: "cell")
         
-        // VFL constraints
+        /*
+            VFL constraints Table View Cell
+        */
         let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
-        // Disable autolayout constraints
-        cell.translatesAutoresizingMaskIntoConstraints = false
-        let viewsDictionary = ["ReportTableviewCell": cell]
-        alertTableView.addSubview(cell)
-        view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[ReportTableviewCell]|",options: [], metrics: nil, views:  viewsDictionary))
-  
+        
+      //  cell.translatesAutoresizingMaskIntoConstraints = false
+      //  alertTableView.addSubview(cell)
+ 
+        
+        var cellAllConstraints = [NSLayoutConstraint]()
+                let cellDictionary = [
+                                      "reportCellDateTime": cell.reportCellDateTimeOutlet,
+                                      "reportCellViewedIndicator" : cell.reportCellViewedIndicatorOutlet]
+        
+//        let cellDictionary = ["ReportTableviewCell": cell,
+//                              "reportCellDateTime": cell.reportCellDateTimeOutlet]
+//
+//        let cellHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[ReportTableviewCell]-50-|",options: [], metrics: nil, views:  cellDictionary)
+//        let cellVerticalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[ReportTableviewCell(cellHeight)]-(cellVSpacing)-|",options: [], metrics: ["cellHeight" : 10, "cellVSpacing" : 2], views:  cellDictionary)
+//        
+//        cellAllConstraints += cellHorizontalConstraints
+//        
+//        cellAllConstraints += cellVerticalConstraints
+//
+//        NSLayoutConstraint.activateConstraints(cellAllConstraints)
+        
+        
+        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
+        
+        cellAllConstraints.removeAll()
+        cell.reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
+        alertTableView.addSubview(cell.reportCellDateTimeOutlet)
+        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(300)]-|",options: [], metrics: nil, views:  cellDictionary)
+        
+        cellAllConstraints += dateTimeHorizontalConstraints
+        
+        
+        
+        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
+        
+        cellAllConstraints.removeAll()
+        cell.reportCellViewedIndicatorOutlet.translatesAutoresizingMaskIntoConstraints = false
+        alertTableView.addSubview(cell.reportCellViewedIndicatorOutlet)
+        let viewedIndicatorHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[reportCellViewedIndicator]-6-|",options: [], metrics: nil, views:  cellDictionary)
+        let viewedIndicatorVerticallConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[reportCellViewedIndicator]-6-|",options: [], metrics: nil, views:  cellDictionary)
+        
+        cellAllConstraints += viewedIndicatorHorizontalConstraints
+        cellAllConstraints += viewedIndicatorVerticallConstraints
+        
+        
+        
+        
+
+        NSLayoutConstraint.activateConstraints(cellAllConstraints)
+        
+        
+        
+        
+        
   
                 
                 
