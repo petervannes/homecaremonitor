@@ -13,9 +13,9 @@ class ReportTableviewCell : UITableViewCell {
     
     @IBOutlet weak var reportCellSeverityOutlet: UIImageView!
     @IBOutlet weak var reportCellDateTimeOutlet: UILabel!
-    @IBOutlet weak var reportCellCustomerLabelOutlet: UILabel!
     @IBOutlet weak var reportCellDescriptionOutlet: UILabel!
     @IBOutlet weak var reportCellViewedIndicatorOutlet: UIImageView!
+    @IBOutlet weak var reportCellCustomerLabelOutlet: UILabel!
     
     
     override func awakeFromNib() {
@@ -30,10 +30,17 @@ class ReportTableviewCell : UITableViewCell {
         
         
         
-        fadeDescription() 
+        fadeDescription()
+        
+        
+    
+        
+        
+        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
+        
         
         print("Selected? \(selected)")
         

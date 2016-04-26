@@ -68,8 +68,8 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="alertTableView" destination="3bw-HQ-ChK" id="PMm-YP-2Hl"/>
                         <outlet property="sortOnSeverityButton" destination="vgD-GU-tgd" id="3HJ-jX-Bid"/>
