@@ -75,22 +75,27 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         let nib = UINib(nibName: "ReportCell", bundle: nil)
         alertTableView.registerNib(nib, forCellReuseIdentifier: "cell")
         
+        
+        // trying to use  NSLayoutAnchor class for constraints
+//        let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
+//
+//        NSLayoutConstraint(item: cell.reportCellDescriptionOutlet, attribute: .Leading, relatedBy: .Equal, toItem: cell.reportCellDescriptionOutlet, attribute: .LeadingMargin, multiplier: 1.0, constant: 50.0).active = true
         /*
             VFL constraints Table View Cell
         */
-        let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
-        var cellAllConstraints = [NSLayoutConstraint]()
-        let cellDictionary = [
-                                      "reportCellDateTime": cell.reportCellDateTimeOutlet,
-                                      "reportCellViewedIndicator" : cell.reportCellViewedIndicatorOutlet,
-            "reportCellDescription" : cell.reportCellDescriptionOutlet ]
+//        let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
+//        var cellAllConstraints = [NSLayoutConstraint]()
+//        let cellDictionary = [
+//                                      "reportCellDateTime": cell.reportCellDateTimeOutlet,
+//                                      "reportCellViewedIndicator" : cell.reportCellViewedIndicatorOutlet,
+//            "reportCellDescription" : cell.reportCellDescriptionOutlet ]
 //        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
 ////        cellAllConstraints.removeAll()
-        cell.reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
+//        cell.reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
      //   alertTableView.addSubview(cell.reportCellDateTimeOutlet)
-        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(300)]-|",options: [], metrics: nil, views:  cellDictionary)
+//        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(300)]-|",options: [], metrics: nil, views:  cellDictionary)
 //
-        cellAllConstraints += dateTimeHorizontalConstraints
+//        cellAllConstraints += dateTimeHorizontalConstraints
 //
 //        
 //        
@@ -119,7 +124,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
 //        
 //        
 //
-        NSLayoutConstraint.activateConstraints(cellAllConstraints)
+//        NSLayoutConstraint.activateConstraints(cellAllConstraints)
         
         
         

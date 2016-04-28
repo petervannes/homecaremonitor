@@ -32,8 +32,36 @@ class ReportTableviewCell : UITableViewCell {
         
         fadeDescription()
         
+//        
+//        subview.l
+//  reportCellSeverityOutlet.Le
         
+        /*
+         VFL constraints Table View Cell
+         */
+
+        var cellAllConstraints = [NSLayoutConstraint]()
+        let cellDictionary = [
+            "reportCellDateTime": reportCellDateTimeOutlet,
+            "reportCellViewedIndicator" : reportCellViewedIndicatorOutlet,
+            "reportCellDescription" : reportCellDescriptionOutlet ]
+        //        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
+        ////        cellAllConstraints.removeAll()
+        
+        
+        reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(reportCellDateTimeOutlet)
+        //   alertTableView.addSubview(cell.reportCellDateTimeOutlet)
+        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(>=200)]-|",options: [], metrics: nil, views:  cellDictionary)
+        //
+        cellAllConstraints += dateTimeHorizontalConstraints
+        
+                NSLayoutConstraint.activateConstraints(cellAllConstraints)
     
+        
+        
+        
+//        NSLayoutConstraint(item: reportCellDescriptionOutlet, attribute: .Leading, relatedBy: .Equal, toItem: ReportTableviewCell., attribute: .LeadingMargin, multiplier: 1.0, constant: 50.0).active = true
         
         
         
