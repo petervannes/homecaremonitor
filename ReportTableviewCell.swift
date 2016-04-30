@@ -16,7 +16,7 @@ class ReportTableviewCell : UITableViewCell {
     @IBOutlet weak var reportCellDescriptionOutlet: UILabel!
     @IBOutlet weak var reportCellViewedIndicatorOutlet: UIImageView!
     @IBOutlet weak var reportCellCustomerLabelOutlet: UILabel!
-    
+    @IBOutlet weak var reportCell: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,7 +32,25 @@ class ReportTableviewCell : UITableViewCell {
         
         fadeDescription()
         
+        reportCell.translatesAutoresizingMaskIntoConstraints = false
+        
+//        let cellMargins = reportCell.layoutMarginsGuide
+        
+        reportCellViewedIndicatorOutlet.bottomAnchor.constraintEqualToAnchor(reportCell.bottomAnchor, constant: 10)
+     
+        reportCellViewedIndicatorOutlet.rightAnchor.constraintEqualToAnchor(reportCell.rightAnchor, constant:-10)
+        
+        
+        reportCellDescriptionOutlet.translatesAutoresizingMaskIntoConstraints = false
+        
+        reportCellDescriptionOutlet.leftAnchor.constraintEqualToAnchor(reportCell.leftAnchor, constant: 10).active = true
+        reportCellDescriptionOutlet.rightAnchor.constraintEqualToAnchor(reportCell.rightAnchor, constant: 10).active = true
+
+        
+//        myView.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
 //        
+//        reportCellViewedIndicatorOutlet.bottomAnchor = reportCell.bottomAnchor -2
+//
 //        subview.l
 //  reportCellSeverityOutlet.Le
         
@@ -40,29 +58,25 @@ class ReportTableviewCell : UITableViewCell {
          VFL constraints Table View Cell
          */
 
-        var cellAllConstraints = [NSLayoutConstraint]()
-        let cellDictionary = [
-            "reportCellDateTime": reportCellDateTimeOutlet,
-            "reportCellViewedIndicator" : reportCellViewedIndicatorOutlet,
-            "reportCellDescription" : reportCellDescriptionOutlet ]
-        //        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
-        ////        cellAllConstraints.removeAll()
-        
-        
-        reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(reportCellDateTimeOutlet)
-        //   alertTableView.addSubview(cell.reportCellDateTimeOutlet)
-        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(>=200)]-|",options: [], metrics: nil, views:  cellDictionary)
-        //
-        cellAllConstraints += dateTimeHorizontalConstraints
-        
-                NSLayoutConstraint.activateConstraints(cellAllConstraints)
+//        var cellAllConstraints = [NSLayoutConstraint]()
+//        let cellDictionary = [
+//            "reportCellDateTime": reportCellDateTimeOutlet,
+//            "reportCellViewedIndicator" : reportCellViewedIndicatorOutlet,
+//            "reportCellDescription" : reportCellDescriptionOutlet ]
+//        //        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
+//        ////        cellAllConstraints.removeAll()
+//        
+//        
+//        reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
+//        self.addSubview(reportCellDateTimeOutlet)
+//        //   alertTableView.addSubview(cell.reportCellDateTimeOutlet)
+//        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(>=200)]-|",options: [], metrics: nil, views:  cellDictionary)
+//        //
+//        cellAllConstraints += dateTimeHorizontalConstraints
+//        
+//                NSLayoutConstraint.activateConstraints(cellAllConstraints)
     
-        
-        
-        
-//        NSLayoutConstraint(item: reportCellDescriptionOutlet, attribute: .Leading, relatedBy: .Equal, toItem: ReportTableviewCell., attribute: .LeadingMargin, multiplier: 1.0, constant: 50.0).active = true
-        
+    
         
         
     }
