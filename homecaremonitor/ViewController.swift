@@ -204,7 +204,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         //        cell.reportCellDateTimeOutlet.text = dateFormatter.stringFromDate(reports[indexPath.row].reportDate!)
         cell.reportCellDateTimeOutlet.text = DateFunctions.getDateDescr(reports[indexPath.row].reportDate!)
         
-        cell.reportCellDescriptionOutlet.text = reports[indexPath.row].shortMessage
+        cell.reportCellInfoOutlet.text = reports[indexPath.row].shortMessage
         //        print("row: \(indexPath.row) severity: \(reports[indexPath.row].severity!)")
         //        print(reports[indexPath.row].severity!.stringValue)
         cell.reportCellSeverityOutlet.image = UIImage(named:  "severity_level_" + reports[indexPath.row].severity!.stringValue)

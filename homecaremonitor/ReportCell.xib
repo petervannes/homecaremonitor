@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F28b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,46 +14,47 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKL-kS-TPh">
-                        <rect key="frame" x="8" y="8" width="99" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="JKL-kS-TPh">
+                        <rect key="frame" x="10" y="8" width="99" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
                         <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="severity_level_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2kx-8Q-ySZ">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="severity_level_1.png" id="2kx-8Q-ySZ">
                         <rect key="frame" x="289" y="8" width="75" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="newmessageindicator.png" translatesAutoresizingMaskIntoConstraints="NO" id="LyN-yv-ddd">
+                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newmessageindicator.png" id="LyN-yv-ddd">
                         <rect key="frame" x="352" y="73" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReportCellBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="khe-Wr-M0O">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ms. Moneypenny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKH-TY-HX5">
-                        <rect key="frame" x="114" y="9" width="147" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ms. Moneypenny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="iKH-TY-HX5">
+                        <rect key="frame" x="114" y="9" width="147" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <accessibility key="accessibilityConfiguration" identifier="cell"/>
                         <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
                         <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ms. Moneypenny with two lines of information in this field for more readbi" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyE-ZD-BR4">
-                        <rect key="frame" x="-86" y="43" width="356" height="80"/>
-                        <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Ms. Moneypenny with two lines of information in this field for more readbi" id="Vcb-sr-KqD">
+                        <rect key="frame" x="8" y="42" width="353" height="167"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES"/>
+                        </accessibility>
                         <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                        <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
-                <variation key="default">
-                    <mask key="subviews">
-                        <exclude reference="khe-Wr-M0O"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="reportCell" destination="GcC-iD-Zlh" id="gNI-L8-weH"/>
                 <outlet property="reportCellCustomerLabelOutlet" destination="iKH-TY-HX5" id="i2D-jt-pFq"/>
                 <outlet property="reportCellDateTimeOutlet" destination="JKL-kS-TPh" id="owy-V9-krb"/>
-                <outlet property="reportCellDescriptionOutlet" destination="hyE-ZD-BR4" id="hi2-T1-5nK"/>
+                <outlet property="reportCellInfoOutlet" destination="Vcb-sr-KqD" id="EO7-ji-KAx"/>
                 <outlet property="reportCellSeverityOutlet" destination="2kx-8Q-ySZ" id="nDl-Ey-2ys"/>
                 <outlet property="reportCellViewedIndicatorOutlet" destination="LyN-yv-ddd" id="Ng8-JQ-UY9"/>
             </connections>
@@ -61,7 +62,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ReportCellBorder.png" width="375" height="95"/>
         <image name="newmessageindicator.png" width="27" height="28"/>
         <image name="severity_level_1.png" width="75" height="26"/>
     </resources>
