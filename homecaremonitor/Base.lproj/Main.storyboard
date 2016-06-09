@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WfV-Cd-hsp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G12a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WfV-Cd-hsp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,6 +21,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxH-uv-ce7">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <gestureRecognizers/>
                                 <color key="barTintColor" red="0.96078431369999995" green="0.65098039220000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
@@ -50,6 +52,9 @@
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="PKU-u3-ajz" appends="YES" id="wkX-K9-5Ah"/>
+                                </connections>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3bw-HQ-ChK">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
@@ -57,6 +62,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3bw-HQ-ChK" firstAttribute="leading" secondItem="S2I-yS-Yit" secondAttribute="leading" id="PcV-DH-ICW"/>
                             <constraint firstItem="XxH-uv-ce7" firstAttribute="leading" secondItem="S2I-yS-Yit" secondAttribute="leading" id="Pll-FL-MBu"/>
@@ -77,8 +83,63 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lHA-Ye-r5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="PKU-u3-ajz">
+                    <connections>
+                        <segue destination="oUg-26-L3u" kind="presentation" modalTransitionStyle="crossDissolve" id="X9c-ED-6mh"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="408.5" y="588.5"/>
+            <point key="canvasLocation" x="372.5" y="588.5"/>
+        </scene>
+        <!--Cheet Sheet View Controller-->
+        <scene sceneID="IXR-Bd-6QM">
+            <objects>
+                <viewController id="oUg-26-L3u" customClass="CheetSheetViewController" customModule="homecaremonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vPh-Wz-3F6"/>
+                        <viewControllerLayoutGuide type="bottom" id="81W-i8-dvV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nvz-Ef-8TU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-4O-Lu9">
+                                <rect key="frame" x="160" y="478" width="55" height="40"/>
+                                <fontDescription key="fontDescription" name="EurostileBold" family="Eurostile" pointSize="24"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="WfV-Cd-hsp" kind="presentation" modalTransitionStyle="crossDissolve" id="25W-b3-3Kk"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="APN Device Token" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JAD-02-QLt">
+                                <rect key="frame" x="37" y="319" width="300" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" selected="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <color key="textColor" red="0.078431372550000003" green="0.59215686270000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="JAD-02-QLt" firstAttribute="centerX" secondItem="nvz-Ef-8TU" secondAttribute="centerX" id="27M-MU-xGn"/>
+                            <constraint firstItem="j4A-4O-Lu9" firstAttribute="centerY" secondItem="nvz-Ef-8TU" secondAttribute="centerY" multiplier="1.6" id="519-dA-AXF"/>
+                            <constraint firstItem="JAD-02-QLt" firstAttribute="centerY" secondItem="nvz-Ef-8TU" secondAttribute="centerY" id="D2l-Ed-ddE"/>
+                            <constraint firstItem="j4A-4O-Lu9" firstAttribute="centerX" secondItem="nvz-Ef-8TU" secondAttribute="centerX" id="m1p-rE-ngV"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="remoteNotificationDeviceToken" destination="JAD-02-QLt" id="O6f-JI-mrb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjI-94-aCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836.5" y="588.5"/>
         </scene>
     </scenes>
     <resources>

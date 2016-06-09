@@ -13,11 +13,100 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+                print("didFinishLaunchingWithOptions1")
+        registerForPushNotifications(application)
+        
+        
+//        
+//        print("didFinishLaunchingWithOptions2")
+//        
+//        // Check if launched from notification
+//        // 1
+//        if let notification = launchOptions?[UIApplicationLaunchOptionsRemoteNotificationKey] as? [String: AnyObject] {
+//            // 2
+//            let aps = notification["aps"] as! [String: AnyObject]
+//            print("received apn didFinishLaunchingWithOptions"  )
+//            for (apskey,apsvalue) in aps {
+//                print("APS: " + apskey + " = " + (apsvalue as! String) )
+//            }
+//            //createNewNewsItem(aps)
+//            // 3
+//          //  (window?.rootViewController as? UITabBarController)?.selectedIndex = 1
+//        }
+        
+        
         return true
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        let aps = userInfo["aps"] as! [String: AnyObject]
+        print("received apn didReceiveRemoteNotification"  )
+        for (apskey,apsvalue) in aps {
+            print("APS: " + apskey + " = " + (apsvalue as! String) )
+        }
+        
+        var customer = aps["customer"] as? String
+        var description = aps["description"] as? String
+        var severity = aps["severity"] as? String
+        var nseverity : NSNumber?
+        
+        if customer != nil {
+              print("Customer: " + customer!)
+        } else {
+            customer = "unknown!"
+        }
+        
+        if description != nil {
+            print("Description: " + description!)
+            
+        } else {
+             description = "no description given"
+        }
+        
+        if severity != nil {
+            print("Severity: " + severity!)
+            
+        } else {
+            severity = "4"
+        }
+        
+        nseverity = Int(severity!)!
+        if nseverity == nil {
+            nseverity = 4
+        }
+        print ("nseverity : \(nseverity)" )
+
+        
+        
+        print ("customer :" + customer! )
+        
+        
+        let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let report = NSEntityDescription.insertNewObjectForEntityForName("Report", inManagedObjectContext: context) as! Report
+        report.viewed = false as! Bool!
+        report.severity = nseverity
+        report.reportDate = NSDate() as! NSDate!
+        report.customer = customer as! String!
+        report.shortMessage = description as! String!
+        report.longMessage = description as! String!
+
+        do {
+            try context.save()
+        } catch let saveError as NSError {
+            print("Saving error: \(saveError.localizedDescription)" )
+            
+        }
+        
+    
+        print("Sending postNotification")
+        
+            NSNotificationCenter.defaultCenter().postNotificationName(ViewController.RefreshNotification, object: self)
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -105,6 +194,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 abort()
             }
         }
+    }
+    
+    
+    func registerForPushNotifications(application: UIApplication) {
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        if notificationSettings.types != .None {
+            application.registerForRemoteNotifications()
+        }
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+        var tokenString = ""
+        
+        // 0d917ce446d45d42843a64f517cde7cd5648efcf4397ad7949a76a45f0192d23
+        for i in 0..<deviceToken.length {
+            tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
+        }
+        
+        print("Device Token:", tokenString)
+        
+        
+        DeviceToken.sharedDeviceToken.token = tokenString
+        
+        
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Failed to register:", error)
     }
 
 }

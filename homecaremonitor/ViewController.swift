@@ -35,32 +35,40 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     var sortMethod = sortMethods.Time
 //    var sortmethod = "time" // "time" or "severity"
     
+    // Selected cell
+    var selectedCellIndexPath: NSIndexPath?
+    let selectedCellHeight: CGFloat = 135.0
+    let unselectedCellHeight: CGFloat = 95.0
     
-    let demoData = [
-        
-        [ "viewed" : false,
-            "severity" : 1,
-            "reportDate": NSDate(),
-            "customer" : "Jan",
-            "shortMessage": "TV Running, no activity. So there is more text than can be displayed. Try to fix it over more lines. But it does not seem to fit. So try to overload this",
-            "longMessage": "Sensor a has notices that TV is running, but no movement has been detected for 2 hours in the house. So there is more to see here."
-        ],
-        ["viewed" : false,
-            "severity": 2,
-            "reportDate": NSDate().dateByAddingTimeInterval(60*60),
-            "customer": "Piet",
-            "shortMessage": "Light on after midnight",
-            "longMessage": "Light is still on after midnight"
-        ],
-        ["viewed" : false,
-            "severity": 3,
-            "reportDate": NSDate().dateByAddingTimeInterval(24*60*60),
-            "customer": "Klaes",
-            "shortMessage": "Room temperature exremely high",
-            "longMessage": "Temperature is over 32 degrees in the livingroom"]
-        
-        
-    ]
+    //Hidden
+    
+    static let RefreshNotification = "RefreshNotification"
+    
+//    let demoData = [
+//        
+//        [ "viewed" : false,
+//            "severity" : 1,
+//            "reportDate": NSDate(),
+//            "customer" : "Jan",
+//            "shortMessage": "TV Running, no activity. So there is more text than can be displayed. Try to fix it over more lines. But it does not seem to fit. So try to overload this",
+//            "longMessage": "Sensor a has notices that TV is running, but no movement has been detected for 2 hours in the house. So there is more to see here."
+//        ],
+//        ["viewed" : false,
+//            "severity": 2,
+//            "reportDate": NSDate().dateByAddingTimeInterval(60*60),
+//            "customer": "Piet",
+//            "shortMessage": "Light on after midnight",
+//            "longMessage": "Light is still on after midnight"
+//        ],
+//        ["viewed" : false,
+//            "severity": 3,
+//            "reportDate": NSDate().dateByAddingTimeInterval(24*60*60),
+//            "customer": "Klaes",
+//            "shortMessage": "Room temperature exremely high",
+//            "longMessage": "Temperature is over 32 degrees in the livingroom"]
+//        
+//        
+//    ]
     
     
     var reports: [Report] = [ ]
@@ -135,24 +143,24 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
                 
         /// DEMO DATA INIT vv
         
-        for demod in demoData {
-            let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-            let report = NSEntityDescription.insertNewObjectForEntityForName("Report", inManagedObjectContext: context) as! Report
-            report.viewed = demod["viewed"] as! Bool!
-            report.severity = demod["severity"] as! NSNumber!
-            report.reportDate = demod["reportDate"] as! NSDate!
-            report.customer = demod["customer"] as! String!
-            report.shortMessage = demod["shortMessage"] as! String!
-            report.longMessage = demod["longMessage"] as! String!
-            
-            
-            do {
-                try context.save()
-            } catch let saveError as NSError {
-                print("Saving error: \(saveError.localizedDescription)" )
-                
-            }
-        }
+//        for demod in demoData {
+//            let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+//            let report = NSEntityDescription.insertNewObjectForEntityForName("Report", inManagedObjectContext: context) as! Report
+//            report.viewed = demod["viewed"] as! Bool!
+//            report.severity = demod["severity"] as! NSNumber!
+//            report.reportDate = demod["reportDate"] as! NSDate!
+//            report.customer = demod["customer"] as! String!
+//            report.shortMessage = demod["shortMessage"] as! String!
+//            report.longMessage = demod["longMessage"] as! String!
+//            
+//            
+//            do {
+//                try context.save()
+//            } catch let saveError as NSError {
+//                print("Saving error: \(saveError.localizedDescription)" )
+//                
+//            }
+//        }
         
         /// DEMO DATA INIT ^^
         
@@ -168,8 +176,28 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         self.sortCells()
         
         
+           NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.receivedRefreshNotification(_:)), name: ViewController.RefreshNotification, object: nil)
+        
+        
         
     }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func receivedRefreshNotification(notification: NSNotification) {
+        dispatch_async(dispatch_get_main_queue()) {
+            let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+            let request = NSFetchRequest(entityName: "Report")
+            self.reports = (try! context.executeFetchRequest(request)) as! [Report]
+            self.alertTableView.reloadData()
+    print("Refresh received!")
+           // self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+        }
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -184,6 +212,26 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reports.count
     }
+    
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        if selectedCellIndexPath != nil && selectedCellIndexPath == indexPath {
+//            selectedCellIndexPath = nil
+//        } else {
+//            selectedCellIndexPath = indexPath
+//        }
+//        
+//        print("Selected cell : \(selectedCellIndexPath)")
+//        
+//        tableView.beginUpdates()
+//        tableView.endUpdates()
+//        
+//        if selectedCellIndexPath != nil {
+//            // This ensures, that the cell is fully visible once expanded
+//            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: true)
+//        }
+//        
+////        self.alertTableView.rowHeight = 10
+//    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -203,6 +251,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ" //format style. Browse online to get a format that fits your needs.
         //        cell.reportCellDateTimeOutlet.text = dateFormatter.stringFromDate(reports[indexPath.row].reportDate!)
         cell.reportCellDateTimeOutlet.text = DateFunctions.getDateDescr(reports[indexPath.row].reportDate!)
+        print ("Row: \(indexPath.row) -- Date: \(reports[indexPath.row].reportDate!)")
         
         cell.reportCellInfoOutlet.text = reports[indexPath.row].shortMessage
         //        print("row: \(indexPath.row) severity: \(reports[indexPath.row].severity!)")
@@ -212,6 +261,12 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         
         cell.reportCellViewedIndicatorOutlet.alpha = reports[indexPath.row].viewed == true ? 0 : 1
         
+  //      cell.reportCellInfoOutlet.scrollRangeToVisible(NSRange(location:0, length:0))
+
+        
+        
+        
+    //    fadeDescription(cell)
         
         
 
@@ -267,7 +322,78 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             
         }
         
+        if selectedCellIndexPath != nil && selectedCellIndexPath == indexPath {
+            selectedCellIndexPath = nil
+            
+        } else {
+            selectedCellIndexPath = indexPath
+        }
+        
+        print("Selected cell : \(selectedCellIndexPath)")
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        if selectedCellIndexPath != nil {
+            // This ensures, that the cell is fully visible once expanded
+            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: true)
+        }
+        
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        if (selectedCellIndexPath != nil && selectedCellIndexPath == indexPath) {
+            
+            return selectedCellHeight
+        }
+        
+        
+        return unselectedCellHeight
+    }
+    
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        <#code#>
+//    }
+//    
+//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if selectedCellIndexPath == indexPath {
+//            return selectedCellHeight
+//        }
+//        return unselectedCellHeight
+//        
+//    }
+//    optional public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if selectedCellIndexPath == indexPath {
+//            return selectedCellHeight
+//        }
+//        return unselectedCellHeight
+//    }
+    
+
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        switch(editingStyle) {
+        case .Delete:
+            
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context: NSManagedObjectContext = appDel.managedObjectContext
+            
+            context.deleteObject(reports[indexPath.row] as NSManagedObject)
+            reports.removeAtIndex(indexPath.row)
+            
+            do {
+                try context.save()
+            } catch let deleteError as NSError {
+                print ("failed to delete row  \(indexPath.row) \(deleteError.localizedDescription) ")
+            }
+            
+            self.alertTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        default: return
+        }
+    }
+    
     
     
     @IBAction func sortOnSeverityButtonTouchInside(sender: UIButton) {
@@ -467,6 +593,50 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
 //        
 //        
 //        
+//    }
+    
+    
+//    func fadeDescription(currentCell :ReportTableviewCell?) {
+//        
+//        print("fadeDescription")
+//        
+//        if let containerView = currentCell!.reportCelInfoMaskOutlet {
+//            //        if let containerView = self.reportCellInfoOutlet {
+//            
+//            // option 1
+//            let gradient = CAGradientLayer(layer: containerView.layer)
+//            gradient.frame = containerView.bounds
+//            //            print("Frame size \(gradient.frame.size)")
+//            gradient.colors = [UIColor.clearColor().CGColor,UIColor.blackColor().CGColor]
+//            //    gradient.startPoint = CGPoint(x: 0.0, y: 1)
+//            
+//            
+//            //            let labelHeight = self.reportCellInfoOutlet.frame.height
+//            //            print("Labelheigt: \(labelHeight)")
+//            
+//            //  gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
+//            gradient.locations = [0.0, 0.88]
+//            containerView.layer.mask = gradient
+//            
+//            
+//            //option 2
+//            
+//            //            let gradient = CAGradientLayer(layer: containerView.layer)
+//            //
+//            //            gradient.frame = containerView.bounds
+//            //
+//            //            let clearColor = UIColor.clearColor().CGColor
+//            //            let blackColor = UIColor.blueColor().CGColor
+//            //
+//            //            gradient.colors = [blackColor, clearColor]
+//            //            gradient.locations = [0.0, 0.48]
+//            //            containerView.layer.mask = gradient
+//            
+//            
+//            
+//        }
+//        
+//        //      reportCellInfoOutlet.backgroundColor = UIColor.clearColor()
 //    }
     
     

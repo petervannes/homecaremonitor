@@ -13,11 +13,13 @@ class ReportTableviewCell : UITableViewCell {
     
     @IBOutlet weak var reportCellSeverityOutlet: UIImageView!
     @IBOutlet weak var reportCellDateTimeOutlet: UILabel!
-//    @IBOutlet weak var reportCellDescriptionOutlet: UILabel!
     @IBOutlet weak var reportCellViewedIndicatorOutlet: UIImageView!
     @IBOutlet weak var reportCellCustomerLabelOutlet: UILabel!
     @IBOutlet weak var reportCell: UIView!
     @IBOutlet weak var reportCellInfoOutlet: UITextView!
+    @IBOutlet weak var reportCelInfoMaskOutlet: UIView!
+    
+    var cellIsSelected = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +30,7 @@ class ReportTableviewCell : UITableViewCell {
         self.layer.masksToBounds = true
         self.layer.borderWidth = 4.0
         
-        fadeDescription()
+        
         
         // Delete autolayout constraints
         reportCell.translatesAutoresizingMaskIntoConstraints = false
@@ -37,29 +39,22 @@ class ReportTableviewCell : UITableViewCell {
         reportCellInfoOutlet.translatesAutoresizingMaskIntoConstraints = false
         reportCellViewedIndicatorOutlet.translatesAutoresizingMaskIntoConstraints = false
         reportCellCustomerLabelOutlet.translatesAutoresizingMaskIntoConstraints = false
+        reportCelInfoMaskOutlet.translatesAutoresizingMaskIntoConstraints = false
         
-   
-        
-//        reportCellViewedIndicatorOutlet.translatesAutoresizingMaskIntoConstraints = false
-//        reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
         
         // viewed Indicator constraints
         let viewedIndicatorConstraints: [NSLayoutConstraint] = [
-            
-     //       reportCellViewedIndicatorOutlet.topAnchor.constraintEqualToAnchor(reportCell.topAnchor),
-            reportCellViewedIndicatorOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -3),
-            reportCellViewedIndicatorOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: -3)
-        
+            reportCellViewedIndicatorOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -2),
+            reportCellViewedIndicatorOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: -2)
         ]
-//        reportCell.addSubview(reportCellViewedIndicatorOutlet)
         NSLayoutConstraint.activateConstraints(viewedIndicatorConstraints)
-
+        
+        // Date/time indicator constraints
         let DateTimeConstraints: [NSLayoutConstraint] = [
-          reportCellDateTimeOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 20),
-        reportCellDateTimeOutlet.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 10)
+            reportCellDateTimeOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 20),
+            reportCellDateTimeOutlet.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 10)
         ]
         NSLayoutConstraint.activateConstraints(DateTimeConstraints)
-        
         
         // Customerlabel constraints
         let CustomerLabelConstraints: [NSLayoutConstraint] = [
@@ -67,134 +62,83 @@ class ReportTableviewCell : UITableViewCell {
             reportCellCustomerLabelOutlet.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 10),
             reportCellCustomerLabelOutlet.rightAnchor.constraintLessThanOrEqualToAnchor(reportCellSeverityOutlet.leftAnchor, constant: -10),
             reportCellCustomerLabelOutlet.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor)
-
         ]
-
         NSLayoutConstraint.activateConstraints(CustomerLabelConstraints)
-//
+        
+        // severity indicator constraints
         let SeverityConstraints: [NSLayoutConstraint] = [
             reportCellSeverityOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -20),
             reportCellSeverityOutlet.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 10)
         ]
-        
         NSLayoutConstraint.activateConstraints(SeverityConstraints)
-//
         
-//        // Description constraints
-//        let DescriptionOutletConstraints: [NSLayoutConstraint] = [
-//            reportCellDescriptionOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 20),
-//            reportCellDescriptionOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: 20),
-//            reportCellDescriptionOutlet.topAnchor.constraintEqualToAnchor(reportCellCustomerLabelOutlet.bottomAnchor, constant: 5),
-//            reportCellDescriptionOutlet.heightAnchor.constraintEqualToAnchor(self.heightAnchor, multiplier: 1)
-//            
-//            
-//        ]
-//        NSLayoutConstraint.activateConstraints(DescriptionOutletConstraints)
-        
+        // info text constraints
         let InfoOutletConstraints: [NSLayoutConstraint] = [
-            reportCellInfoOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 20),
-            reportCellInfoOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: 20),
+            reportCellInfoOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 18),
+            reportCellInfoOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -18),
             reportCellInfoOutlet.topAnchor.constraintEqualToAnchor(reportCellCustomerLabelOutlet.bottomAnchor, constant: 5),
-            //reportCellInfoOutlet.heightAnchor.constraintEqualToAnchor(self.heightAnchor, multiplier: 1)
-            
+           // reportCellInfoOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: -10)
             
         ]
         NSLayoutConstraint.activateConstraints(InfoOutletConstraints)
         
+        // info text gradient constraints
+        let reportCelInfoMaskConstraints: [NSLayoutConstraint] = [
+            reportCelInfoMaskOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 18),
+            reportCelInfoMaskOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -18),
+            reportCelInfoMaskOutlet.topAnchor.constraintEqualToAnchor(reportCellInfoOutlet.topAnchor),
+            reportCelInfoMaskOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor)
+            
+        ]
+        NSLayoutConstraint.activateConstraints(reportCelInfoMaskConstraints)
         
-        
-        
-//        let cellMargins = reportCell.layoutMarginsGuide
-        
-    //    reportCellViewedIndicatorOutlet.bottomAnchor.constraintEqualToAnchor(reportCell.bottomAnchor, constant: 10)
-     
-    //    reportCellViewedIndicatorOutlet.rightAnchor.constraintEqualToAnchor(reportCell.rightAnchor, constant:-80)
-        
-        
-    //   reportCellDescriptionOutlet.translatesAutoresizingMaskIntoConstraints = false
-  //
-//       reportCellDescriptionOutlet.leftAnchor.constraintEqualToAnchor(reportCell.leftAnchor, constant: 10).active = true
-//       reportCellDescriptionOutlet.rightAnchor.constraintEqualToAnchor(reportCell.rightAnchor, constant: 10).active = true
-        
-        
-        // severity indicator
-        
-     //     reportCellSeverityOutlet.topAnchor.constraintEqualToAnchor(reportCell.topAnchor, constant: 10).active = true
-  //     reportCellSeverityOutlet.rightAnchor.constraintEqualToAnchor(reportCell.rightAnchor, constant: 10).active = true
-  //      reportCellSeverityOutlet.trailingAnchor.constraintEqualToAnchor(reportCell.trailingAnchor, constant: 10).active = true
-
-     //   reportCellSeverityOutlet.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        
-
-        
-//        myView.trailingAnchor.constraintEqualToAnchor(margins.trailingAnchor).active = true
-//        
-//        reportCellViewedIndicatorOutlet.bottomAnchor = reportCell.bottomAnchor -2
-//
-//        subview.l
-//  reportCellSeverityOutlet.Le
-        
-        /*
-         VFL constraints Table View Cell
-         */
-
-//        var cellAllConstraints = [NSLayoutConstraint]()
-//        let cellDictionary = [
-//            "reportCellDateTime": reportCellDateTimeOutlet,
-//            "reportCellViewedIndicator" : reportCellViewedIndicatorOutlet,
-//            "reportCellDescription" : reportCellDescriptionOutlet ]
-//        //        // set constraint on UILabel reportCellDateTimeOutlet in cell ReportCell
-//        ////        cellAllConstraints.removeAll()
-//        
-//        
-//        reportCellDateTimeOutlet.translatesAutoresizingMaskIntoConstraints = false
-//        self.addSubview(reportCellDateTimeOutlet)
-//        //   alertTableView.addSubview(cell.reportCellDateTimeOutlet)
-//        let dateTimeHorizontalConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|-50-[reportCellDateTime(>=200)]-|",options: [], metrics: nil, views:  cellDictionary)
-//        //
-//        cellAllConstraints += dateTimeHorizontalConstraints
-//        
-//                NSLayoutConstraint.activateConstraints(cellAllConstraints)
-    
-    
-        
-        
+ //       fadeDescription()
     }
     
+
     override func setSelected(selected: Bool, animated: Bool) {
         
-       //      reportCellInfoOutlet.sizeToFit()
+        //      reportCellInfoOutlet.sizeToFit()
         
-        print("Selected? \(selected)")
+       // print("Selected? \(selected)")
         
         super.setSelected(selected, animated: animated    )
         
         print("set selected")
         
         if (selected) {
+            print("Selected!")
+        } else {
+            print("NOT selected")
             fadeDescription()
-//            if let containerView = self.reportCellDescriptionOutlet {
-            
-//                print("set gradient")
-            
-                //                let gradient = CAGradientLayer(layer: containerView.layer)
-                //                gradient.frame = containerView.bounds
-                //                gradient.colors = [UIColor.clearColor().CGColor, UIColor.blueColor().CGColor]
-                //                gradient.startPoint = CGPoint(x: 0.0, y: 1)
-                //                var labelHeight = self.reportCellDescriptionOutlet.frame.height
-                //                print("Labelheigt: \(labelHeight)")
-                //                //       self.sizeToFit()
-                //
-                //
-                //
-                //                gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
-                //                containerView.layer.mask = gradient
-//            }
-            
-            
         }
+        
+        // fadeDescription()
+        
+   
+        
+//        if (selected) {
+//            fadeDescription()
+//            //            if let containerView = self.reportCellDescriptionOutlet {
+//            
+//            //                print("set gradient")
+//            
+//            //                let gradient = CAGradientLayer(layer: containerView.layer)
+//            //                gradient.frame = containerView.bounds
+//            //                gradient.colors = [UIColor.clearColor().CGColor, UIColor.blueColor().CGColor]
+//            //                gradient.startPoint = CGPoint(x: 0.0, y: 1)
+//            //                var labelHeight = self.reportCellDescriptionOutlet.frame.height
+//            //                print("Labelheigt: \(labelHeight)")
+//            //                //       self.sizeToFit()
+//            //
+//            //
+//            //
+//            //                gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
+//            //                containerView.layer.mask = gradient
+//            //            }
+//            
+//            
+//        }
     }
     
     
@@ -202,22 +146,43 @@ class ReportTableviewCell : UITableViewCell {
         
         print("fadeDescription")
         
-        if let containerView = self.reportCellInfoOutlet {
+        if let containerView = reportCelInfoMaskOutlet {
+//        if let containerView = self.reportCellInfoOutlet {
             
+            // option 1
             let gradient = CAGradientLayer(layer: containerView.layer)
             gradient.frame = containerView.bounds
-            gradient.colors = [UIColor.clearColor().CGColor, UIColor.blueColor().CGColor]
-            gradient.startPoint = CGPoint(x: 0.0, y: 1)
-            var labelHeight = self.reportCellInfoOutlet.frame.height
-            print("Labelheigt: \(labelHeight)")
-            //       self.sizeToFit()
+//            print("Frame size \(gradient.frame.size)")
+            gradient.colors = [UIColor.clearColor().CGColor,UIColor.blackColor().CGColor]
+        //    gradient.startPoint = CGPoint(x: 0.0, y: 1)
+      
             
+//            let labelHeight = self.reportCellInfoOutlet.frame.height
+//            print("Labelheigt: \(labelHeight)")
             
-            
-            gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
+          //  gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
+            gradient.locations = [0.0, 0.88]
             containerView.layer.mask = gradient
             
+            
+            //option 2
+            
+//            let gradient = CAGradientLayer(layer: containerView.layer)
+//            
+//            gradient.frame = containerView.bounds
+//            
+//            let clearColor = UIColor.clearColor().CGColor
+//            let blackColor = UIColor.blueColor().CGColor
+//            
+//            gradient.colors = [blackColor, clearColor]
+//            gradient.locations = [0.0, 0.48]
+//            containerView.layer.mask = gradient
+            
+    
+            
         }
+        
+          //      reportCellInfoOutlet.backgroundColor = UIColor.clearColor()
     }
     
     

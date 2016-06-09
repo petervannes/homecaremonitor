@@ -83,6 +83,8 @@
 		5744CBE71CB30020005B6CBD /* severity_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBD21CB30020005B6CBD /* severity_20.png */; };
 		5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBE91CB30547005B6CBD /* ViewController.swift */; };
 		5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */; };
+		5763354A1D075EC600B5B1E9 /* CheatSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576335491D075EC600B5B1E9 /* CheatSheetViewController.swift */; };
+		5763354C1D075FB900B5B1E9 /* DeviceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5763354B1D075FB900B5B1E9 /* DeviceToken.swift */; };
 		5778E7A81CCA2FEB0044B834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */; };
 		5778E7AA1CCA30350044B834 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A91CCA30350044B834 /* Logo.png */; };
 		579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */; };
@@ -199,6 +201,8 @@
 		5744CBD21CB30020005B6CBD /* severity_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_20.png; sourceTree = "<group>"; };
 		5744CBE91CB30547005B6CBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5744CBEB1CB43D05005B6CBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		576335491D075EC600B5B1E9 /* CheatSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheatSheetViewController.swift; sourceTree = "<group>"; };
+		5763354B1D075FB900B5B1E9 /* DeviceToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceToken.swift; sourceTree = "<group>"; };
 		5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5778E7A91CCA30350044B834 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
@@ -298,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				57E63BB51CAE955E00A37CC8 /* Main.storyboard */,
+				576335491D075EC600B5B1E9 /* CheatSheetViewController.swift */,
 				5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */,
 				5744CBE91CB30547005B6CBD /* ViewController.swift */,
 				5741A39E1CBC32E60066FF29 /* ReportTableviewCell.swift */,
@@ -312,6 +317,7 @@
 			children = (
 				5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */,
 				57C393441CB819FB00C36D71 /* Report.swift */,
+				5763354B1D075FB900B5B1E9 /* DeviceToken.swift */,
 			);
 			name = Object;
 			sourceTree = "<group>";
@@ -558,6 +564,9 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 92ADVD8337;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -714,8 +723,10 @@
 				579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */,
 				5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */,
 				5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */,
+				5763354C1D075FB900B5B1E9 /* DeviceToken.swift in Sources */,
 				5741A3B71CC1168D0066FF29 /* Report+CoreDataProperties.swift in Sources */,
 				57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */,
+				5763354A1D075EC600B5B1E9 /* CheatSheetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

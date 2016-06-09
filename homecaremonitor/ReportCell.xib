@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,9 +14,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" id="Vcb-sr-KqD">
+                        <rect key="frame" x="20" y="42" width="330" height="167"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" staticText="YES"/>
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
+                        <string key="text">Ms. Moneypenny with two lines of information in this field for more reading select the cell to make the cell resize so you can see the contents of the full UITextiew</string>
+                        <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                    </textView>
+                    <view autoresizesSubviews="NO" contentMode="scaleToFill" id="xTS-mO-yai">
+                        <rect key="frame" x="10" y="48" width="757" height="45"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1min ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="JKL-kS-TPh">
                         <rect key="frame" x="10" y="8" width="99" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
                         <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -32,25 +53,17 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ms. Moneypenny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="iKH-TY-HX5">
                         <rect key="frame" x="114" y="9" width="147" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <accessibility key="accessibilityConfiguration" identifier="cell"/>
+                        <accessibility key="accessibilityConfiguration" identifier="cell">
+                            <bool key="isElement" value="NO"/>
+                        </accessibility>
                         <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
                         <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Ms. Moneypenny with two lines of information in this field for more readbi" id="Vcb-sr-KqD">
-                        <rect key="frame" x="8" y="42" width="353" height="167"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" staticText="YES"/>
-                        </accessibility>
-                        <color key="textColor" red="0.078431372549019607" green="0.59215686274509804" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" name="EurostileRegular" family="Eurostile" pointSize="18"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="reportCelInfoMaskOutlet" destination="xTS-mO-yai" id="fpA-rT-pKB"/>
                 <outlet property="reportCell" destination="GcC-iD-Zlh" id="gNI-L8-weH"/>
                 <outlet property="reportCellCustomerLabelOutlet" destination="iKH-TY-HX5" id="i2D-jt-pFq"/>
                 <outlet property="reportCellDateTimeOutlet" destination="JKL-kS-TPh" id="owy-V9-krb"/>
