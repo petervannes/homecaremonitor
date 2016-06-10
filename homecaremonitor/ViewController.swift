@@ -33,15 +33,13 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     // sortmethod
     enum sortMethods { case Time, Severity }
     var sortMethod = sortMethods.Time
-//    var sortmethod = "time" // "time" or "severity"
     
     // Selected cell
     var selectedCellIndexPath: NSIndexPath?
     let selectedCellHeight: CGFloat = 135.0
     let unselectedCellHeight: CGFloat = 95.0
     
-    //Hidden
-    
+    // Notification definition for postNotification
     static let RefreshNotification = "RefreshNotification"
     
 //    let demoData = [
@@ -72,7 +70,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     
     
     var reports: [Report] = [ ]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,10 +173,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         self.sortCells()
         
         
-           NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.receivedRefreshNotification(_:)), name: ViewController.RefreshNotification, object: nil)
-        
-        
-        
     }
     
     deinit {
@@ -213,90 +206,33 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         return reports.count
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        if selectedCellIndexPath != nil && selectedCellIndexPath == indexPath {
-//            selectedCellIndexPath = nil
-//        } else {
-//            selectedCellIndexPath = indexPath
-//        }
-//        
-//        print("Selected cell : \(selectedCellIndexPath)")
-//        
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
-//        
-//        if selectedCellIndexPath != nil {
-//            // This ensures, that the cell is fully visible once expanded
-//            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: true)
-//        }
-//        
-////        self.alertTableView.rowHeight = 10
-//    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-             print ("cellForRowAtIndexPath row \(indexPath.row) value viewed \(reports[indexPath.row].viewed)   value  severity \(reports[indexPath.row].severity!.stringValue)")
-        //        let cell = UITableViewCell()
-        ////        let sound = notesArray[indexPath.row]
-        //        cell.textLabel!.text = "een note"
-        //        return cell
         
         let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
         
-        //        cell.reportCellCustomerLabelOutlet.text = "A random customer (" + String(indexPath.row) + ")"
         cell.reportCellCustomerLabelOutlet.text = reports[indexPath.row].customer
-       
-
-        //        let dateFormatter = NSDateFormatter()
-        //        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ" //format style. Browse online to get a format that fits your needs.
-        //        cell.reportCellDateTimeOutlet.text = dateFormatter.stringFromDate(reports[indexPath.row].reportDate!)
         cell.reportCellDateTimeOutlet.text = DateFunctions.getDateDescr(reports[indexPath.row].reportDate!)
-        print ("Row: \(indexPath.row) -- Date: \(reports[indexPath.row].reportDate!)")
-        
         cell.reportCellInfoOutlet.text = reports[indexPath.row].shortMessage
-        //        print("row: \(indexPath.row) severity: \(reports[indexPath.row].severity!)")
-        //        print(reports[indexPath.row].severity!.stringValue)
         cell.reportCellSeverityOutlet.image = UIImage(named:  "severity_level_" + reports[indexPath.row].severity!.stringValue)
-        
-        
         cell.reportCellViewedIndicatorOutlet.alpha = reports[indexPath.row].viewed == true ? 0 : 1
-        
-  //      cell.reportCellInfoOutlet.scrollRangeToVisible(NSRange(location:0, length:0))
-
-        
-        
-        
-    //    fadeDescription(cell)
-        
-        
-
-
         
         return cell
     }
     
-    
-    
-    // Viewed
     
     func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
         print ("Clicked row \(indexPath.row) value viewed \(reports[indexPath.row].viewed)   severity \(reports[indexPath.row].severity!.stringValue)")
         
         
         if (!reports[indexPath.row].viewed!.boolValue) {
-            print ("Not viewed yet")
             
             reports[indexPath.row].viewed = true 
             
-        //    let cell:ReportTableviewCell = self.alertTableView.dequeueReusableCellWithIdentifier("cell") as! ReportTableviewCell
-        //    cell.reportCellViewedIndicatorOutlet.alpha = 1
             
             let hcmDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
             let context = hcmDelegate.managedObjectContext
-            
             let request = NSFetchRequest(entityName: "Report")
-       //     request.predicate = NSPredicate(format: "customer = %@ and reportDate = %@", reports[indexPath].customer! as String, reports[indexPath].reportDate! as String)
             let requestAttributeCustomer = reports[indexPath.row].customer! as String
             let requestAttributeReportDate = reports[indexPath.row].reportDate! as NSDate
             request.predicate = NSPredicate(format: "customer = %@ and reportDate = %@", requestAttributeCustomer,requestAttributeReportDate)
@@ -304,7 +240,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             do {
             if let fetchResults = try hcmDelegate.managedObjectContext.executeFetchRequest(request) as? [NSManagedObject] {
                 if fetchResults.count != 0{
-                    
                 
                     let managedObject = fetchResults[0]
                     managedObject.setValue(reports[indexPath.row].viewed, forKey: "viewed")
@@ -329,8 +264,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             selectedCellIndexPath = indexPath
         }
         
-        print("Selected cell : \(selectedCellIndexPath)")
-        
         tableView.beginUpdates()
         tableView.endUpdates()
         
@@ -352,26 +285,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         return unselectedCellHeight
     }
     
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        <#code#>
-//    }
-//    
-//    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if selectedCellIndexPath == indexPath {
-//            return selectedCellHeight
-//        }
-//        return unselectedCellHeight
-//        
-//    }
-//    optional public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        if selectedCellIndexPath == indexPath {
-//            return selectedCellHeight
-//        }
-//        return unselectedCellHeight
-//    }
-    
-
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         switch(editingStyle) {
@@ -405,10 +318,6 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             
             case .Severity:
             
-            
-            
-    
-        
         // Start animation if none running
         if (!severityButtonTimer.valid) {
             // Change sort order
@@ -448,16 +357,8 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             
         }
         
-//            if (severitySort == "up") {
-//                self.reports.sortInPlace({$0.severity?.compare($1.severity!) == NSComparisonResult.OrderedAscending})
-//            } else {
-//                self.reports.sortInPlace({$0.severity?.compare($1.severity!) == NSComparisonResult.OrderedDescending})
-//            }
-            
-//                          self.sortCells()
             self.alertTableView.reloadData()
             
-      //  }
         
     }
     
@@ -506,24 +407,9 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             sortMethod = .Time
             self.sortCells() ;
             
-            
-            
         }
             
-            
-//            if (timeSort == "forward") {
-//                self.reports.sortInPlace({$0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedAscending})
-//                self.alertTableView.reloadData()
-//            } else {
-//                self.reports.sortInPlace({$0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedDescending})
-//                self.alertTableView.reloadData()
-//            }
-//            
-          //              self.sortCells()
-            
             self.alertTableView.reloadData()
-            
-    //    }
         
     }
     
@@ -556,91 +442,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
             
         }
         
-        
-        
-        
     }
-    
-//    
-//    func sortCells() {
-//        
-//        
-//        // Sort cells on Date and Severity
-//        // First on date, subsort on Severity
-//        
-//        if ((timeSort == "forward") && (severitySort == "up")) {
-//            self.reports.sortInPlace({($0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedAscending) &&
-//                ($0.severity?.compare($1.severity!) == NSComparisonResult.OrderedAscending)})
-//
-//        } else if ((timeSort != "forward") && (severitySort == "up")) {
-//            self.reports.sortInPlace({($0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedDescending) &&
-//                ($0.severity?.compare($1.severity!) == NSComparisonResult.OrderedAscending)})
-//        } else if ((timeSort == "forward") && (severitySort != "up")) {
-//            self.reports.sortInPlace({($0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedAscending) &&
-//                ($0.severity?.compare($1.severity!) == NSComparisonResult.OrderedDescending)})
-//        } else if ((timeSort != "forward") && (severitySort != "up")) {
-//            self.reports.sortInPlace({($0.reportDate?.compare($1.reportDate!) == NSComparisonResult.OrderedDescending) &&
-//                ($0.severity?.compare($1.severity!) == NSComparisonResult.OrderedDescending)})
-//        }
-//        
-//        
-//        
-////        if (severitySort == "up") {
-////            self.reports.sortInPlace({$0.severity?.compare($1.severity!) == NSComparisonResult.OrderedAscending})
-////        } else {
-////            self.reports.sortInPlace({$0.severity?.compare($1.severity!) == NSComparisonResult.OrderedDescending})
-////        }
-//        
-//        
-//        
-//    }
-    
-    
-//    func fadeDescription(currentCell :ReportTableviewCell?) {
-//        
-//        print("fadeDescription")
-//        
-//        if let containerView = currentCell!.reportCelInfoMaskOutlet {
-//            //        if let containerView = self.reportCellInfoOutlet {
-//            
-//            // option 1
-//            let gradient = CAGradientLayer(layer: containerView.layer)
-//            gradient.frame = containerView.bounds
-//            //            print("Frame size \(gradient.frame.size)")
-//            gradient.colors = [UIColor.clearColor().CGColor,UIColor.blackColor().CGColor]
-//            //    gradient.startPoint = CGPoint(x: 0.0, y: 1)
-//            
-//            
-//            //            let labelHeight = self.reportCellInfoOutlet.frame.height
-//            //            print("Labelheigt: \(labelHeight)")
-//            
-//            //  gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
-//            gradient.locations = [0.0, 0.88]
-//            containerView.layer.mask = gradient
-//            
-//            
-//            //option 2
-//            
-//            //            let gradient = CAGradientLayer(layer: containerView.layer)
-//            //
-//            //            gradient.frame = containerView.bounds
-//            //
-//            //            let clearColor = UIColor.clearColor().CGColor
-//            //            let blackColor = UIColor.blueColor().CGColor
-//            //
-//            //            gradient.colors = [blackColor, clearColor]
-//            //            gradient.locations = [0.0, 0.48]
-//            //            containerView.layer.mask = gradient
-//            
-//            
-//            
-//        }
-//        
-//        //      reportCellInfoOutlet.backgroundColor = UIColor.clearColor()
-//    }
-    
-    
-    
     
     
 }

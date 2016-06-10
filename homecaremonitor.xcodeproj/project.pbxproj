@@ -59,7 +59,6 @@
 		5741A3AC1CBD79E50066FF29 /* severity_level_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3A71CBD79E50066FF29 /* severity_level_4.png */; };
 		5741A3AF1CBD7D9C0066FF29 /* newmessageindicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */; };
 		5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A3B01CC0194A0066FF29 /* DateFunctions.swift */; };
-		5741A3B71CC1168D0066FF29 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */; };
 		5744CBD31CB30020005B6CBD /* severity_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBE1CB30020005B6CBD /* severity_00.png */; };
 		5744CBD41CB30020005B6CBD /* severity_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBBF1CB30020005B6CBD /* severity_01.png */; };
 		5744CBD51CB30020005B6CBD /* severity_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 5744CBC01CB30020005B6CBD /* severity_02.png */; };
@@ -87,6 +86,23 @@
 		5763354C1D075FB900B5B1E9 /* DeviceToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5763354B1D075FB900B5B1E9 /* DeviceToken.swift */; };
 		5778E7A81CCA2FEB0044B834 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */; };
 		5778E7AA1CCA30350044B834 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5778E7A91CCA30350044B834 /* Logo.png */; };
+		5782C5A81D09FB4600E00C10 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5782C5A71D09FB4600E00C10 /* Report+CoreDataProperties.swift */; };
+		5782C5BB1D0ADB4900E00C10 /* 50 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5A91D0ADB4900E00C10 /* 50 - iPhone app.png */; };
+		5782C5BC1D0ADB4900E00C10 /* 50 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AA1D0ADB4900E00C10 /* 50 - iPhone app@2x.png */; };
+		5782C5BD1D0ADB4900E00C10 /* 50 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AB1D0ADB4900E00C10 /* 50 - iPhone app@3x.png */; };
+		5782C5BE1D0ADB4900E00C10 /* 57 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AC1D0ADB4900E00C10 /* 57 - iPhone app.png */; };
+		5782C5BF1D0ADB4900E00C10 /* 57 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AD1D0ADB4900E00C10 /* 57 - iPhone app@2x.png */; };
+		5782C5C01D0ADB4900E00C10 /* 57 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AE1D0ADB4900E00C10 /* 57 - iPhone app@3x.png */; };
+		5782C5C11D0ADB4900E00C10 /* 60 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5AF1D0ADB4900E00C10 /* 60 - iPhone app.png */; };
+		5782C5C21D0ADB4900E00C10 /* 60 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B01D0ADB4900E00C10 /* 60 - iPhone app@2x.png */; };
+		5782C5C31D0ADB4900E00C10 /* 60 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B11D0ADB4900E00C10 /* 60 - iPhone app@3x.png */; };
+		5782C5C41D0ADB4900E00C10 /* 72 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B21D0ADB4900E00C10 /* 72 - iPhone app.png */; };
+		5782C5C51D0ADB4900E00C10 /* 72 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B31D0ADB4900E00C10 /* 72 - iPhone app@2x.png */; };
+		5782C5C61D0ADB4900E00C10 /* 72 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B41D0ADB4900E00C10 /* 72 - iPhone app@3x.png */; };
+		5782C5C71D0ADB4900E00C10 /* 76 - iPhone app.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B51D0ADB4900E00C10 /* 76 - iPhone app.png */; };
+		5782C5C81D0ADB4900E00C10 /* 76 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B61D0ADB4900E00C10 /* 76 - iPhone app@2x.png */; };
+		5782C5C91D0ADB4900E00C10 /* 76 - iPhone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5B71D0ADB4900E00C10 /* 76 - iPhone app@3x.png */; };
+		5782C5D61D0AE57C00E00C10 /* 83.5 - iPhone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5782C5D51D0AE57C00E00C10 /* 83.5 - iPhone app@2x.png */; };
 		579361BE1CB80E1B0043EBE0 /* HCTimerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */; };
 		57C393461CB819FB00C36D71 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C393441CB819FB00C36D71 /* Report.swift */; };
 		57C3942E1CB81E0E00C36D71 /* ReportCellBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */; };
@@ -177,7 +193,6 @@
 		5741A3A71CBD79E50066FF29 /* severity_level_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_level_4.png; sourceTree = "<group>"; };
 		5741A3AE1CBD7D9C0066FF29 /* newmessageindicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newmessageindicator.png; sourceTree = "<group>"; };
 		5741A3B01CC0194A0066FF29 /* DateFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFunctions.swift; sourceTree = "<group>"; };
-		5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Report+CoreDataProperties.swift"; path = "../Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5744CBBE1CB30020005B6CBD /* severity_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_00.png; sourceTree = "<group>"; };
 		5744CBBF1CB30020005B6CBD /* severity_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_01.png; sourceTree = "<group>"; };
 		5744CBC01CB30020005B6CBD /* severity_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = severity_02.png; sourceTree = "<group>"; };
@@ -205,6 +220,23 @@
 		5763354B1D075FB900B5B1E9 /* DeviceToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceToken.swift; sourceTree = "<group>"; };
 		5778E7A71CCA2FEB0044B834 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5778E7A91CCA30350044B834 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		5782C5A71D09FB4600E00C10 /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Report+CoreDataProperties.swift"; path = "../Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5782C5A91D0ADB4900E00C10 /* 50 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "50 - iPhone app.png"; sourceTree = "<group>"; };
+		5782C5AA1D0ADB4900E00C10 /* 50 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "50 - iPhone app@2x.png"; sourceTree = "<group>"; };
+		5782C5AB1D0ADB4900E00C10 /* 50 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "50 - iPhone app@3x.png"; sourceTree = "<group>"; };
+		5782C5AC1D0ADB4900E00C10 /* 57 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57 - iPhone app.png"; sourceTree = "<group>"; };
+		5782C5AD1D0ADB4900E00C10 /* 57 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57 - iPhone app@2x.png"; sourceTree = "<group>"; };
+		5782C5AE1D0ADB4900E00C10 /* 57 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57 - iPhone app@3x.png"; sourceTree = "<group>"; };
+		5782C5AF1D0ADB4900E00C10 /* 60 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60 - iPhone app.png"; sourceTree = "<group>"; };
+		5782C5B01D0ADB4900E00C10 /* 60 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60 - iPhone app@2x.png"; sourceTree = "<group>"; };
+		5782C5B11D0ADB4900E00C10 /* 60 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60 - iPhone app@3x.png"; sourceTree = "<group>"; };
+		5782C5B21D0ADB4900E00C10 /* 72 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "72 - iPhone app.png"; sourceTree = "<group>"; };
+		5782C5B31D0ADB4900E00C10 /* 72 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "72 - iPhone app@2x.png"; sourceTree = "<group>"; };
+		5782C5B41D0ADB4900E00C10 /* 72 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "72 - iPhone app@3x.png"; sourceTree = "<group>"; };
+		5782C5B51D0ADB4900E00C10 /* 76 - iPhone app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76 - iPhone app.png"; sourceTree = "<group>"; };
+		5782C5B61D0ADB4900E00C10 /* 76 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76 - iPhone app@2x.png"; sourceTree = "<group>"; };
+		5782C5B71D0ADB4900E00C10 /* 76 - iPhone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76 - iPhone app@3x.png"; sourceTree = "<group>"; };
+		5782C5D51D0AE57C00E00C10 /* 83.5 - iPhone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83.5 - iPhone app@2x.png"; sourceTree = "<group>"; };
 		579361BD1CB80E1B0043EBE0 /* HCTimerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCTimerWrapper.swift; sourceTree = "<group>"; };
 		57C393441CB819FB00C36D71 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = ../Report.swift; sourceTree = "<group>"; };
 		57C3942D1CB81E0E00C36D71 /* ReportCellBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReportCellBorder.png; sourceTree = "<group>"; };
@@ -315,7 +347,7 @@
 		5741A3A11CBC39F30066FF29 /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				5741A3B61CC1168D0066FF29 /* Report+CoreDataProperties.swift */,
+				5782C5A71D09FB4600E00C10 /* Report+CoreDataProperties.swift */,
 				57C393441CB819FB00C36D71 /* Report.swift */,
 				5763354B1D075FB900B5B1E9 /* DeviceToken.swift */,
 			);
@@ -481,6 +513,22 @@
 		57E63BEE1CAE96D700A37CC8 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				5782C5D51D0AE57C00E00C10 /* 83.5 - iPhone app@2x.png */,
+				5782C5A91D0ADB4900E00C10 /* 50 - iPhone app.png */,
+				5782C5AA1D0ADB4900E00C10 /* 50 - iPhone app@2x.png */,
+				5782C5AB1D0ADB4900E00C10 /* 50 - iPhone app@3x.png */,
+				5782C5AC1D0ADB4900E00C10 /* 57 - iPhone app.png */,
+				5782C5AD1D0ADB4900E00C10 /* 57 - iPhone app@2x.png */,
+				5782C5AE1D0ADB4900E00C10 /* 57 - iPhone app@3x.png */,
+				5782C5AF1D0ADB4900E00C10 /* 60 - iPhone app.png */,
+				5782C5B01D0ADB4900E00C10 /* 60 - iPhone app@2x.png */,
+				5782C5B11D0ADB4900E00C10 /* 60 - iPhone app@3x.png */,
+				5782C5B21D0ADB4900E00C10 /* 72 - iPhone app.png */,
+				5782C5B31D0ADB4900E00C10 /* 72 - iPhone app@2x.png */,
+				5782C5B41D0ADB4900E00C10 /* 72 - iPhone app@3x.png */,
+				5782C5B51D0ADB4900E00C10 /* 76 - iPhone app.png */,
+				5782C5B61D0ADB4900E00C10 /* 76 - iPhone app@2x.png */,
+				5782C5B71D0ADB4900E00C10 /* 76 - iPhone app@3x.png */,
 				57E63C1A1CAEA27C00A37CC8 /* 29 - iPhone.png */,
 				57E63C1B1CAEA27C00A37CC8 /* 29 - iPhone@2x.png */,
 				57E63C1C1CAEA27C00A37CC8 /* 29 - iPhone@3x.png */,
@@ -609,6 +657,7 @@
 			files = (
 				57419D871CB444C6004DDD80 /* timebackward_13.png in Resources */,
 				5736F5631CB4466E00195475 /* timeforward_10.png in Resources */,
+				5782C5BB1D0ADB4900E00C10 /* 50 - iPhone app.png in Resources */,
 				5744CBE01CB30020005B6CBD /* severity_13.png in Resources */,
 				5741A3AB1CBD79E50066FF29 /* severity_level_3.png in Resources */,
 				5778E7AA1CCA30350044B834 /* Logo.png in Resources */,
@@ -619,6 +668,7 @@
 				5741A3A91CBD79E50066FF29 /* severity_level_1.png in Resources */,
 				5736F5671CB4466E00195475 /* timeforward_14.png in Resources */,
 				5736F56C1CB4466E00195475 /* timeforward_19.png in Resources */,
+				5782C5C51D0ADB4900E00C10 /* 72 - iPhone app@2x.png in Resources */,
 				5736F5641CB4466E00195475 /* timeforward_11.png in Resources */,
 				57419D7C1CB444C6004DDD80 /* timebackward_02.png in Resources */,
 				57419D8E1CB444C6004DDD80 /* timebackward_20.png in Resources */,
@@ -639,13 +689,20 @@
 				57E63C241CAEA27C00A37CC8 /* 29 - iPhone@2x.png in Resources */,
 				57419D8A1CB444C6004DDD80 /* timebackward_16.png in Resources */,
 				5736F5661CB4466E00195475 /* timeforward_13.png in Resources */,
+				5782C5C81D0ADB4900E00C10 /* 76 - iPhone app@2x.png in Resources */,
+				5782C5C31D0ADB4900E00C10 /* 60 - iPhone app@3x.png in Resources */,
+				5782C5C21D0ADB4900E00C10 /* 60 - iPhone app@2x.png in Resources */,
+				5782C5C11D0ADB4900E00C10 /* 60 - iPhone app.png in Resources */,
 				5736F56A1CB4466E00195475 /* timeforward_17.png in Resources */,
+				5782C5C71D0ADB4900E00C10 /* 76 - iPhone app.png in Resources */,
 				5744CBD61CB30020005B6CBD /* severity_03.png in Resources */,
 				57419D7D1CB444C6004DDD80 /* timebackward_03.png in Resources */,
 				5741A3A81CBD79E50066FF29 /* severity_level_0.png in Resources */,
 				5741A3AC1CBD79E50066FF29 /* severity_level_4.png in Resources */,
 				5736F55B1CB4466E00195475 /* timeforward_02.png in Resources */,
 				57419D821CB444C6004DDD80 /* timebackward_08.png in Resources */,
+				5782C5C41D0ADB4900E00C10 /* 72 - iPhone app.png in Resources */,
+				5782C5C61D0ADB4900E00C10 /* 72 - iPhone app@3x.png in Resources */,
 				5744CBDB1CB30020005B6CBD /* severity_08.png in Resources */,
 				5744CBE31CB30020005B6CBD /* severity_16.png in Resources */,
 				57E63C291CAEA27C00A37CC8 /* 60 - iPhone app.png in Resources */,
@@ -656,12 +713,15 @@
 				57419D7F1CB444C6004DDD80 /* timebackward_05.png in Resources */,
 				5744CBE21CB30020005B6CBD /* severity_15.png in Resources */,
 				57419D841CB444C6004DDD80 /* timebackward_10.png in Resources */,
+				5782C5D61D0AE57C00E00C10 /* 83.5 - iPhone app@2x.png in Resources */,
+				5782C5BD1D0ADB4900E00C10 /* 50 - iPhone app@3x.png in Resources */,
 				5744CBDA1CB30020005B6CBD /* severity_07.png in Resources */,
 				5736F5591CB4466E00195475 /* timeforward_00.png in Resources */,
 				57419D7B1CB444C6004DDD80 /* timebackward_01.png in Resources */,
 				57419D801CB444C6004DDD80 /* timebackward_06.png in Resources */,
 				57E63BBC1CAE955E00A37CC8 /* Assets.xcassets in Resources */,
 				5778E7A81CCA2FEB0044B834 /* LaunchScreen.storyboard in Resources */,
+				5782C5BE1D0ADB4900E00C10 /* 57 - iPhone app.png in Resources */,
 				57E63BB71CAE955E00A37CC8 /* Main.storyboard in Resources */,
 				5744CBE51CB30020005B6CBD /* severity_18.png in Resources */,
 				57419D8D1CB444C6004DDD80 /* timebackward_19.png in Resources */,
@@ -675,12 +735,16 @@
 				57419D8C1CB444C6004DDD80 /* timebackward_18.png in Resources */,
 				5736F55F1CB4466E00195475 /* timeforward_06.png in Resources */,
 				57E63C271CAEA27C00A37CC8 /* 40 - iPhone spotlight@2x.png in Resources */,
+				5782C5C01D0ADB4900E00C10 /* 57 - iPhone app@3x.png in Resources */,
 				5744CBD31CB30020005B6CBD /* severity_00.png in Resources */,
 				57E63C251CAEA27C00A37CC8 /* 29 - iPhone@3x.png in Resources */,
+				5782C5BC1D0ADB4900E00C10 /* 50 - iPhone app@2x.png in Resources */,
 				57419D861CB444C6004DDD80 /* timebackward_12.png in Resources */,
 				5736F5681CB4466E00195475 /* timeforward_15.png in Resources */,
 				5736F5621CB4466E00195475 /* timeforward_09.png in Resources */,
+				5782C5C91D0ADB4900E00C10 /* 76 - iPhone app@3x.png in Resources */,
 				5744CBD41CB30020005B6CBD /* severity_01.png in Resources */,
+				5782C5BF1D0ADB4900E00C10 /* 57 - iPhone app@2x.png in Resources */,
 				5744CBDF1CB30020005B6CBD /* severity_12.png in Resources */,
 				57419D881CB444C6004DDD80 /* timebackward_14.png in Resources */,
 				57E63C231CAEA27C00A37CC8 /* 29 - iPhone.png in Resources */,
@@ -717,6 +781,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5736F5761CB5976700195475 /* ButtonAnimation.swift in Sources */,
+				5782C5A81D09FB4600E00C10 /* Report+CoreDataProperties.swift in Sources */,
 				57C393461CB819FB00C36D71 /* Report.swift in Sources */,
 				5741A39F1CBC32E60066FF29 /* ReportTableviewCell.swift in Sources */,
 				5744CBEC1CB43D05005B6CBD /* AppDelegate.swift in Sources */,
@@ -724,7 +789,6 @@
 				5744CBEA1CB30547005B6CBD /* ViewController.swift in Sources */,
 				5741A3B11CC0194A0066FF29 /* DateFunctions.swift in Sources */,
 				5763354C1D075FB900B5B1E9 /* DeviceToken.swift in Sources */,
-				5741A3B71CC1168D0066FF29 /* Report+CoreDataProperties.swift in Sources */,
 				57E63BBA1CAE955E00A37CC8 /* homecaremonitor.xcdatamodeld in Sources */,
 				5763354A1D075EC600B5B1E9 /* CheatSheetViewController.swift in Sources */,
 			);

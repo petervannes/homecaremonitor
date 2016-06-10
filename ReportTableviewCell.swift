@@ -30,8 +30,6 @@ class ReportTableviewCell : UITableViewCell {
         self.layer.masksToBounds = true
         self.layer.borderWidth = 4.0
         
-        
-        
         // Delete autolayout constraints
         reportCell.translatesAutoresizingMaskIntoConstraints = false
         reportCellSeverityOutlet.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +38,6 @@ class ReportTableviewCell : UITableViewCell {
         reportCellViewedIndicatorOutlet.translatesAutoresizingMaskIntoConstraints = false
         reportCellCustomerLabelOutlet.translatesAutoresizingMaskIntoConstraints = false
         reportCelInfoMaskOutlet.translatesAutoresizingMaskIntoConstraints = false
-        
         
         // viewed Indicator constraints
         let viewedIndicatorConstraints: [NSLayoutConstraint] = [
@@ -77,7 +74,7 @@ class ReportTableviewCell : UITableViewCell {
             reportCellInfoOutlet.leftAnchor.constraintEqualToAnchor(self.leftAnchor, constant: 18),
             reportCellInfoOutlet.rightAnchor.constraintEqualToAnchor(self.rightAnchor, constant: -18),
             reportCellInfoOutlet.topAnchor.constraintEqualToAnchor(reportCellCustomerLabelOutlet.bottomAnchor, constant: 5),
-           // reportCellInfoOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: -10)
+            // reportCellInfoOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: -10)
             
         ]
         NSLayoutConstraint.activateConstraints(InfoOutletConstraints)
@@ -90,99 +87,34 @@ class ReportTableviewCell : UITableViewCell {
             reportCelInfoMaskOutlet.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor)
             
         ]
+        
         NSLayoutConstraint.activateConstraints(reportCelInfoMaskConstraints)
         
- //       fadeDescription()
     }
     
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
-        
-        //      reportCellInfoOutlet.sizeToFit()
-        
-       // print("Selected? \(selected)")
         
         super.setSelected(selected, animated: animated    )
         
-        print("set selected")
-        
-        if (selected) {
-            print("Selected!")
-        } else {
-            print("NOT selected")
+        if (!selected) {
             fadeDescription()
         }
         
-        // fadeDescription()
-        
-   
-        
-//        if (selected) {
-//            fadeDescription()
-//            //            if let containerView = self.reportCellDescriptionOutlet {
-//            
-//            //                print("set gradient")
-//            
-//            //                let gradient = CAGradientLayer(layer: containerView.layer)
-//            //                gradient.frame = containerView.bounds
-//            //                gradient.colors = [UIColor.clearColor().CGColor, UIColor.blueColor().CGColor]
-//            //                gradient.startPoint = CGPoint(x: 0.0, y: 1)
-//            //                var labelHeight = self.reportCellDescriptionOutlet.frame.height
-//            //                print("Labelheigt: \(labelHeight)")
-//            //                //       self.sizeToFit()
-//            //
-//            //
-//            //
-//            //                gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
-//            //                containerView.layer.mask = gradient
-//            //            }
-//            
-//            
-//        }
     }
     
     
     func fadeDescription() {
         
-        print("fadeDescription")
-        
         if let containerView = reportCelInfoMaskOutlet {
-//        if let containerView = self.reportCellInfoOutlet {
             
-            // option 1
             let gradient = CAGradientLayer(layer: containerView.layer)
             gradient.frame = containerView.bounds
-//            print("Frame size \(gradient.frame.size)")
             gradient.colors = [UIColor.clearColor().CGColor,UIColor.blackColor().CGColor]
-        //    gradient.startPoint = CGPoint(x: 0.0, y: 1)
-      
-            
-//            let labelHeight = self.reportCellInfoOutlet.frame.height
-//            print("Labelheigt: \(labelHeight)")
-            
-          //  gradient.endPoint = CGPoint(x: 0.0, y: 0.48)
             gradient.locations = [0.0, 0.88]
             containerView.layer.mask = gradient
-            
-            
-            //option 2
-            
-//            let gradient = CAGradientLayer(layer: containerView.layer)
-//            
-//            gradient.frame = containerView.bounds
-//            
-//            let clearColor = UIColor.clearColor().CGColor
-//            let blackColor = UIColor.blueColor().CGColor
-//            
-//            gradient.colors = [blackColor, clearColor]
-//            gradient.locations = [0.0, 0.48]
-//            containerView.layer.mask = gradient
-            
-    
-            
         }
         
-          //      reportCellInfoOutlet.backgroundColor = UIColor.clearColor()
     }
     
     
