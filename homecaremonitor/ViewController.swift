@@ -147,8 +147,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
 //            report.severity = demod["severity"] as! NSNumber!
 //            report.reportDate = demod["reportDate"] as! NSDate!
 //            report.customer = demod["customer"] as! String!
-//            report.shortMessage = demod["shortMessage"] as! String!
-//            report.longMessage = demod["longMessage"] as! String!
+//            report.message = demod["message"] as! String!
 //            
 //            
 //            do {
@@ -213,7 +212,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         
         cell.reportCellCustomerLabelOutlet.text = reports[indexPath.row].customer
         cell.reportCellDateTimeOutlet.text = DateFunctions.getDateDescr(reports[indexPath.row].reportDate!)
-        cell.reportCellInfoOutlet.text = reports[indexPath.row].shortMessage
+//      cell.reportCellInfoOutlet.text = reports[indexPath.row].shortMessage
         cell.reportCellSeverityOutlet.image = UIImage(named:  "severity_level_" + reports[indexPath.row].severity!.stringValue)
         cell.reportCellViewedIndicatorOutlet.alpha = reports[indexPath.row].viewed == true ? 0 : 1
         
